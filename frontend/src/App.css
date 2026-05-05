@@ -1,0 +1,94 @@
+.App {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+/* smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* subtle grain */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Fade up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.9s ease-out both; }
+
+/* Marquee-like slow pan on hero image */
+@keyframes slowZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.15); }
+}
+.slow-zoom { animation: slowZoom 18s ease-in-out infinite alternate; }
+
+/* card tilt */
+.project-card {
+  transition: transform 350ms cubic-bezier(.2,.8,.2,1), box-shadow 350ms ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px -20px rgba(11, 31, 58, 0.35);
+}
+
+.project-card img {
+  transition: transform 600ms ease;
+}
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Nav underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  height: 2px; width: 0;
+  background: #F39019;
+  transition: width 250ms ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+.btn-primary {
+  background: #F39019;
+  color: #0B1F3A;
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+.btn-primary:hover {
+  background: #ffa838;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -14px rgba(243, 144, 25, 0.6);
+}
+
+.btn-outline {
+  border: 1.5px solid #0B1F3A;
+  color: #0B1F3A;
+  background: transparent;
+  transition: background 200ms ease, color 200ms ease;
+}
+.btn-outline:hover {
+  background: #0B1F3A;
+  color: #ffffff;
+}
+
+/* section title underline accent */
+.title-accent {
+  display: inline-block;
+  height: 3px;
+  width: 56px;
+  background: #F39019;
+  border-radius: 2px;
+}
