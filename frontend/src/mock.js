@@ -187,13 +187,13 @@ export const WHY_US = [
 
 export const SERVICES = [
   { title: 'CUSTOM DESIGNED HOMES', desc: 'Bespoke homes tailored to your lifestyle, needs and budget. Unique designs, functional spaces and quality finishes built to last.', icon: 'Home' },
-  { title: 'HOME & LAND PACKAGES', desc: 'Carefully selected locations combined with beautifully designed homes for a seamless and stress-free building experience.', icon: 'MapPin' },
-  { title: 'PROJECT MANAGEMENT SERVICES', desc: 'Expert coordination of your project from start to finish, ensuring timelines, budgets and quality are delivered.', icon: 'Hammer' },
-  { title: 'KNOCKDOWN & REBUILD', desc: 'Transform your existing property with a brand-new home – more value, modern living and a fresh start in the location you love.', icon: 'ClipboardList' },
+  { title: 'HOME & LAND PACKAGES', desc: 'Carefully selected locations combined with beautifully designed homes for a seamless and stress-free building experience.', icon: 'MapPinned' },
+  { title: 'PROJECT MANAGEMENT SERVICES', desc: 'Expert coordination of your project from start to finish, ensuring timelines, budgets and quality are delivered.', icon: 'BriefcaseBusiness' },
+  { title: 'KNOCKDOWN & REBUILD', desc: 'Transform your existing property with a brand-new home – more value, modern living and a fresh start in the location you love.', icon: 'Hammer' },
   { title: 'SUBDIVISION SERVICES', desc: 'Unlock the potential of your land. We manage the entire subdivision process from planning and approvals to final registration.', icon: 'Map' },
-  { title: 'LAND / PROPERTY DEVELOPMENT', desc: 'We identify opportunities and deliver high-quality development solutions that create long-term value and strong returns.', icon: 'PaintBucket' },
-  { title: 'INTERIOR DESIGNING', desc: 'Thoughtful interior design that blends style, comfort and functionality to create beautiful, liveable spaces.', icon: 'Map' },
-  { title: 'CONSTRUCTION SERVICES', desc: 'High-quality construction delivered with precision, skilled workmanship and a commitment to safety and excellence.', icon: 'PaintBucket' },
+  { title: 'LAND / PROPERTY DEVELOPMENT', desc: 'We identify opportunities and deliver high-quality development solutions that create long-term value and strong returns.', icon: 'Building2' },
+  { title: 'INTERIOR DESIGNING', desc: 'Thoughtful interior design that blends style, comfort and functionality to create beautiful, liveable spaces.', icon: 'Sofa' },
+  { title: 'CONSTRUCTION SERVICES', desc: 'High-quality construction delivered with precision, skilled workmanship and a commitment to safety and excellence.', icon: 'HardHat' },
 ];
 
 
