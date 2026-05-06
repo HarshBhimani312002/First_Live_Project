@@ -1,142 +1,169 @@
 import heroImg from "./assets/nest-logo.jpeg";
 import hero from './assets/hero.png';
 import about from "./assets/About_image.png"
-import img1 from './assets/img1.png'
-import img2 from './assets/img2.png'
-import img3 from './assets/img3.png'
-import img4 from './assets/img4.png'
-import img5 from './assets/img5.png'
-import img6 from './assets/img6.png'
-import img7 from './assets/img7.png'
-import img8 from './assets/img8.png'
-import img9 from './assets/img9.png'
+
+
+import prject1_image from "./assets/hero.png"
+import hero_img1 from "./assets/hero_img1.png"
+import hero_img2 from "./assets/hero_img2.png"
+import hero_img3 from "./assets/hero_img3.png"
+import hero_img4 from "./assets/hero_img4.png"
+import hero_img5 from "./assets/hero_img5.png"
+import hero_img6 from "./assets/hero_img6.png"
+import hero_img7 from "./assets/hero_img7.png"
+import hero_img8 from "./assets/hero_img8.png"
+import hero_img9 from "./assets/hero_img9.png"
+import project2_image from "./assets/Project2_Image.png"
+import project2_image1 from "./assets/Project2_Image1.png"
+import project2_image2 from "./assets/Project2_Image2.png"
+import project2_image3 from "./assets/Project2_Image3.png"
+import project2_image4 from "./assets/Project2_Image4.png"
+import project2_image5 from "./assets/Project2_Image5.png"
+import project2_image6 from "./assets/Project2_Image6.png"
+import project2_image7 from "./assets/Project2_Image7.png"
+import project2_image8 from "./assets/Project2_Image8.png"
+import project2_image9 from "./assets/Project2_Image9.png"
+import project3_image from "./assets/project3_image.png"
+import project3_image1 from "./assets/project3_image1.png"
+import project3_image2 from "./assets/project3_image2.png"
+import project3_image3 from "./assets/project3_image3.png"
+import project3_image4 from "./assets/project3_image4.png"
+import project3_image5 from "./assets/project3_image5.png"
+import project3_image6 from "./assets/project3_image6.png"
+import project3_image7 from "./assets/project3_image7.png"
+import project3_image8 from "./assets/project3_image8.png"
+import project3_image9 from "./assets/project3_image9.png"
 
 export const HERO_IMAGE =hero
-  // "https://images.unsplash.com/photo-1706808849780-7a04fbac83ef?auto=format&fit=crop&w=2000&q=80";
+ 
 
 export const ABOUT_IMAGE =
-  // "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1400&q=80";
   about
 
 export const PROJECTS = [
   {
     id: 1,
-    // name: "Sunrise Estate",
-    // location: "Adelaide Hills, SA",
-    // price: "$680,000",
-    image:
-      // "https://images.unsplash.com/photo-1722421492323-eaf9c401befe?auto=format&fit=crop&w=1200&q=80",
-      img1
-    // beds: 4,
-    // baths: 2,
-    // living: 2,
-    // garage: 2,
-    // tag: "Custom Home",
+  
+    image:    
+      prject1_image
   },
   {
     id: 2,
-    // name: "Marlowe Residence",
-    // location: "Glenelg, SA",
-    // price: "$820,000",
-    image:img2
-    //   "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=1200&q=80",
-    // beds: 4,
-    // baths: 3,
-    // living: 2,
-    // garage: 2,
-    // tag: "House & Land",
+    image:hero_img1
   },
   {
     id: 3,
-    // name: "The Havenwood",
-    // location: "Norwood, SA",
-    // price: "$595,000",
-    image:img3
-    //   "https://images.unsplash.com/photo-1628744448839-a475cc0e90c3?auto=format&fit=crop&w=1200&q=80",
-    // beds: 3,
-    // baths: 2,
-    // living: 1,
-    // garage: 2,
-    // tag: "Modern Build",
+    image:hero_img2
   },
   {
     id: 4,
-    // name: "Azure Bay Home",
-    // location: "Henley Beach, SA",
-    // price: "$910,000",
-    image:img4
-    //   "https://images.unsplash.com/photo-1706808849827-7366c098b317?auto=format&fit=crop&w=1200&q=80",
-    // beds: 5,
-    // baths: 3,
-    // living: 2,
-    // garage: 2,
-    // tag: "Luxury",
+    image:hero_img3
   },
   {
     id: 5,
-    // name: "Willowgrove",
-    // location: "Prospect, SA",
-    // price: "$720,000",
-    image:img5
-    //   "https://images.unsplash.com/photo-1706808849803-f61304e024ab?auto=format&fit=crop&w=1200&q=80",
-    // beds: 4,
-    // baths: 2,
-    // living: 2,
-    // garage: 2,
-    // tag: "New Build",
+    image:hero_img4
   },
   {
     id: 6,
-    // name: "Redbrick Manor",
-    // location: "Unley, SA",
-    // price: "$640,000",
-    image:img6
-    //   "https://images.pexels.com/photos/30163090/pexels-photo-30163090.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    // beds: 4,
-    // baths: 2,
-    // living: 1,
-    // garage: 2,
-    // tag: "Heritage",
+    image:hero_img5
   },
   {
     id: 7,
-    // name: "The Archer",
-    // location: "West Lakes, SA",
-    // price: "$755,000",
-    image:img7
-    //   "https://images.pexels.com/photos/32666364/pexels-photo-32666364.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    // beds: 4,
-    // baths: 3,
-    // living: 2,
-    // garage: 2,
-    // tag: "Architectural",
+    image:hero_img6
   },
   {
     id: 8,
-    // name: "Linden White",
-    // location: "Mitcham, SA",
-    // price: "$580,000",
-    image:img8
-    //   "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    // beds: 3,
-    // baths: 2,
-    // living: 1,
-    // garage: 1,
-    // tag: "Minimalist",
+    image:hero_img7
   },
    {
     id: 9,
-    // name: "Linden White",
-    // location: "Mitcham, SA",
-    // price: "$580,000",
-    image:img9
-    //   "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    // beds: 3,
-    // baths: 2,
-    // living: 1,
-    // garage: 1,
-    // tag: "Minimalist",
+    image:hero_img8
   },
+    {
+    id: 10,
+    image:hero_img9
+  },
+  {
+    id: 11,
+    image:project2_image
+  },
+  {
+    id: 12,
+    image:project2_image1
+  },
+  {
+    id: 13,
+    image:project2_image2
+  },
+  {
+    id: 14,
+    image:project2_image3
+  },
+  {
+    id: 15,
+    image:project2_image4
+  },
+  {
+    id: 16,
+    image:project2_image5
+  },
+  {
+    id: 17,
+    image:project2_image6
+  },
+  {
+    id: 18,
+    image:project2_image7
+  },
+  {
+    id: 19,
+    image:project2_image8
+  },
+  {
+    id: 20,
+    image:project2_image9
+  },
+  {
+    id: 21,
+    image:project3_image
+  },
+    {
+    id: 22,
+    image:project3_image1
+  },
+    {
+    id: 23,
+    image:project3_image2
+  },
+    {
+    id: 24,
+    image:project3_image3
+  },
+    {
+    id: 25,
+    image:project3_image4
+  },
+    {
+    id: 26,
+    image:project3_image5
+  },
+    {
+    id: 27,
+    image:project3_image6
+  },
+    {
+    id: 28,
+    image:project3_image7
+  },
+    {
+    id: 29,
+    image:project3_image8
+  },
+    {
+    id: 30,
+    image:project3_image9
+  },
+
 ];
 
 export const WHY_US = [

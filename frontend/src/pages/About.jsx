@@ -105,8 +105,11 @@ export default function About() {
     <>
       <PageHero
         breadcrumb="About"
-        title="Our story is built one home at a time."
-        subtitle="NEST is a boutique Adelaide home builder creating custom homes for families who value honesty, craft and clarity."
+        title="Built on trust, crafted for modern living."
+        subtitle="At Nest Homes, we believe a home is more than just four walls and a roof, it’s where life happens. From the first morning coffee to the last goodnights, your home should feel like it was made for you, because with us, it is.
+Founded on a simple belief that everyone deserves a home built with integrity and genuine attention to detail, we bring that standard to every project we take on. We are a tight knit company, which means you get a team that is flexible, hands-on, and invested in getting it right.
+From your first conversation with us through to final handover, we manage every stage of your build with care and transparency. We are selective about the suppliers and tradespeople we partner with, because we know the quality of your home depends on the strength of the team behind it. Every decision we make is guided by one question: would we be proud to hand over the keys?
+We take the time to hear you, understand your lifestyle, and shape your vision into something real, then we help build your dream with the craftmanship and honesty it deserves."
       />
 
       {/* Mission Section */}

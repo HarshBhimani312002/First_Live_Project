@@ -41,7 +41,7 @@ export default function Services({ preview = false, hideHeader = false }) {
                 <h3 className="font-[Poppins] text-xl font-semibold text-[#0B1F3A] group-hover:text-white transition-colors mb-2 relative z-10">{svc.title}</h3>
                 <p className="text-sm text-slate-600 group-hover:text-white/80 leading-relaxed transition-colors relative z-10">{svc.desc}</p>
                 <div className="mt-5 text-xs font-semibold tracking-widest uppercase text-[#F39019] inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more <ArrowUpRight className="h-3.5 w-3.5" />
+                   {/* <ArrowUpRight className="h-3.5 w-3.5" /> */}
                 </div>
               </div>
             );

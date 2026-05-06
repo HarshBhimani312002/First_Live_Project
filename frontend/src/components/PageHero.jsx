@@ -19,7 +19,7 @@ export default function PageHero({ title, subtitle, breadcrumb }) {
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-5 text-lg text-white/80 max-w-2xl leading-relaxed">{subtitle}</p>
+          <p className="mt-5 text-lg text-white/80 max-w-4xl leading-relaxed">{subtitle}</p>
         )}
       </div>
     </section>

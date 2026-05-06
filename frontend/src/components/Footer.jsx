@@ -92,23 +92,6 @@ export default function Footer() {
           <p className="text-sm text-white/70 mb-4">
             Subscribe for new home designs and building tips.
           </p>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              e.target.reset();
-            }}
-            className="flex"
-          >
-            <input
-              type="email"
-              required
-              placeholder="your@email.com"
-              className="flex-1 px-3 py-2 rounded-l-md text-[#0B1F3A] text-sm outline-none"
-            />
-            <button className="bg-[#F39019] hover:bg-[#ffa838] text-[#0B1F3A] font-semibold px-4 rounded-r-md text-sm">
-              Join
-            </button>
-          </form>
 
           <div className="flex gap-3 mt-6">
             <a
@@ -129,7 +112,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
         <div>© 2026 NEST Homes. All rights reserved.</div>
-        <div>Builder License: BLD296546</div>
+        <div>Builder License: BLD354512</div>
       </div>
     </footer>
   );
