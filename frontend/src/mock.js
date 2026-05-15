@@ -1,4 +1,4 @@
-import heroImg from "./assets/nest-logo.jpeg";
+import heroImg from "./assets/nest_logo.png";
 import hero from './assets/hero.png';
 import about from "./assets/About_image.png"
 
@@ -33,8 +33,13 @@ import project3_image6 from "./assets/project3_image6.png"
 import project3_image7 from "./assets/project3_image7.png"
 import project3_image8 from "./assets/project3_image8.png"
 import project3_image9 from "./assets/project3_image9.png"
+import slider2 from "./assets/slider2.png"
+import slider3 from "./assets/slider3.png"
 
 export const HERO_IMAGE =hero
+export const HERO_IMAGE2 =slider2
+export const HERO_IMAGE3 =slider3
+
  
 
 export const ABOUT_IMAGE =
@@ -190,10 +195,10 @@ export const SERVICES = [
   { title: 'HOME & LAND PACKAGES', desc: 'Carefully selected locations combined with beautifully designed homes for a seamless and stress-free building experience.', icon: 'MapPinned' },
   { title: 'PROJECT MANAGEMENT SERVICES', desc: 'Expert coordination of your project from start to finish, ensuring timelines, budgets and quality are delivered.', icon: 'BriefcaseBusiness' },
   { title: 'KNOCKDOWN & REBUILD', desc: 'Transform your existing property with a brand-new home – more value, modern living and a fresh start in the location you love.', icon: 'Hammer' },
-  { title: 'SUBDIVISION SERVICES', desc: 'Unlock the potential of your land. We manage the entire subdivision process from planning and approvals to final registration.', icon: 'Map' },
+  // { title: 'SUBDIVISION SERVICES', desc: 'Unlock the potential of your land. We manage the entire subdivision process from planning and approvals to final registration.', icon: 'Map' },
   { title: 'LAND / PROPERTY DEVELOPMENT', desc: 'We identify opportunities and deliver high-quality development solutions that create long-term value and strong returns.', icon: 'Building2' },
   { title: 'INTERIOR DESIGNING', desc: 'Thoughtful interior design that blends style, comfort and functionality to create beautiful, liveable spaces.', icon: 'Sofa' },
-  { title: 'CONSTRUCTION SERVICES', desc: 'High-quality construction delivered with precision, skilled workmanship and a commitment to safety and excellence.', icon: 'HardHat' },
+  // { title: 'CONSTRUCTION SERVICES', desc: 'High-quality construction delivered with precision, skilled workmanship and a commitment to safety and excellence.', icon: 'HardHat' },
 ];
 
 

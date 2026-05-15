@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import { Toaster } from "./components/ui/toaster";
+import Packages from "./pages/Packages";
 
 function App() {
   return (
@@ -20,7 +21,6 @@ function App() {
 
         <Routes>
           <Route element={<Layout />}>
-
             <Route path="/" element={<Home />} />
 
             <Route path="/about" element={<About />} />
@@ -28,13 +28,13 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
 
             {/* IMPORTANT */}
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:id" element={<ProjectsPage />} />
+            <Route path="/Gallery" element={<ProjectsPage />} />
+            <Route path="/Gallery/:id" element={<ProjectsPage />} />
 
-            <Route path="/process" element={<ProcessPage />} />
+            <Route path="//Packages" element={<Packages />} />
+            {/* <Route path="/process" element={<ProcessPage />} /> */}
 
             <Route path="/contact" element={<ContactPage />} />
-
           </Route>
         </Routes>
       </BrowserRouter>

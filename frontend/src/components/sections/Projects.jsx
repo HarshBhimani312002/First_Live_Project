@@ -1,72 +1,3 @@
-// import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import { Bed, Bath, Sofa, Car, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
-// import { PROJECTS } from '../../mock';
-
-// const TAGS = ['All', 'Custom Home', 'House & Land', 'Luxury', 'New Build'];
-
-// export default function Projects({ preview = false, hideHeader = false }) {
-//   const [filter, setFilter] = useState('All');
-//   const all = filter === 'All' ? PROJECTS : PROJECTS.filter(p => p.tag === filter);
-//   const list = preview ? all.slice(0, 3) : all;
-
-//   return (
-//     <section id="projects" className="py-24 bg-[#FAFAF7]">
-//       <div className="max-w-7xl mx-auto px-6">
-//         {!hideHeader && (
-//           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-//             <div>
-//               <div className="title-accent mb-4" />
-//               <p className="text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">Our Projects</p>
-//               <h2 className="font-[Poppins] text-4xl md:text-5xl font-semibold text-[#0B1F3A] leading-tight max-w-2xl">
-//                 A portfolio of homes we’re proud of.
-//               </h2>
-//             </div>
-
-//             {preview ? (
-//               <Link to="/projects" className="btn-outline rounded-md px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-2 self-start">
-//                 View All Projects <ArrowUpRight className="h-4 w-4" />
-//               </Link>
-//             ) : (
-//               <div className="flex flex-wrap gap-2">
-//                 {TAGS.map((t) => (
-//                   <button
-//                     key={t}
-//                     onClick={() => setFilter(t)}
-//                     className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
-//                       filter === t
-//                         ? 'bg-[#0B1F3A] text-white'
-//                         : 'bg-white text-[#0B1F3A] border border-slate-200 hover:border-[#0B1F3A]'
-//                     }`}
-//                   >
-//                     {t}
-//                   </button>
-//                 ))}
-//               </div>
-//             )}
-//           </div>
-//         )}
-
-//         {hideHeader && !preview && (
-
-//           <></>
-//         )}
-
-//         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-//           {list.map((p) => (
-//             <article key={p.id} className="project-card bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
-//               <div className="relative h-60 overflow-hidden">
-
-//               </div>
-
-//             </article>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Link,
@@ -75,13 +6,15 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, X } from 'lucide-react';
 import { PROJECTS } from '../../mock';
 
 const TAGS = ['All', 'Custom Home', 'House & Land', 'Luxury', 'New Build'];
 
 export default function Projects({ preview = false, hideHeader = false }) {
+
   const [filter, setFilter] = useState('All');
+  const [openImage, setOpenImage] = useState(null);
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -92,8 +25,8 @@ export default function Projects({ preview = false, hideHeader = false }) {
 
   // only clickable on /projects page
   const isProjectsPage =
-    location.pathname === '/projects' ||
-    location.pathname.includes('/projects/');
+    location.pathname === '/Gallery' ||
+    location.pathname.includes('/Gallery/');
 
   const all =
     filter === 'All'
@@ -106,13 +39,13 @@ export default function Projects({ preview = false, hideHeader = false }) {
       id: 1,
       name: 'HUGH Ave Parahills',
       image: all[0]?.image,
-      photos: [all[1], all[2], all[3], all[4], all[5], all[6], all[7], all[8],  all[9]].filter(Boolean),
+      photos: [all[1], all[2], all[3], all[4], all[5], all[6], all[7], all[8], all[9]].filter(Boolean),
     },
     {
       id: 2,
       name: 'LORAL St. Parahills',
       image: all[10]?.image,
-      photos: [all[11], all[12], all[13], all[14], all[15], all[16], all[17], all[18], all[19],].filter(Boolean),
+      photos: [all[11], all[12], all[13], all[14], all[15], all[16], all[17], all[18], all[19]].filter(Boolean),
     },
     {
       id: 3,
@@ -149,6 +82,19 @@ export default function Projects({ preview = false, hideHeader = false }) {
     }
   }, [selectedProject]);
 
+  // BODY SCROLL LOCK
+  useEffect(() => {
+    if (openImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [openImage]);
+
   return (
     <section id="projects" className="py-24 bg-[#FAFAF7]">
       <div className="max-w-7xl mx-auto px-6">
@@ -160,7 +106,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
               <div className="title-accent mb-4" />
 
               <p className="text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
-                Our Projects
+                Our Gallery
               </p>
 
               <h2 className="font-[Poppins] text-4xl md:text-5xl font-semibold text-[#0B1F3A] leading-tight max-w-2xl">
@@ -170,10 +116,10 @@ export default function Projects({ preview = false, hideHeader = false }) {
 
             {preview ? (
               <Link
-                to="/projects"
+                to="/Gallery"
                 className="btn-outline rounded-md px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-2 self-start"
               >
-                View All Projects <ArrowUpRight className="h-4 w-4" />
+                View Gallery <ArrowUpRight className="h-4 w-4" />
               </Link>
             ) : (
               <div className="flex flex-wrap gap-2">
@@ -210,7 +156,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
 
                 sessionStorage.setItem('scrollToGallery', 'true');
 
-                navigate(`/projects/${p.id}`);
+                navigate(`/Gallery/${p.id}`);
               }}
               className={`project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-all duration-300 ${
                 isProjectsPage
@@ -237,7 +183,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
                   </p>
                 ) : (
                   <p className="text-sm text-slate-500 mt-2">
-                   Click “View All Projects” to browse project galleries
+                    Click “View Gallery” to browse project galleries
                   </p>
                 )}
               </div>
@@ -266,7 +212,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
 
               <button
                 onClick={() => {
-                  navigate('/projects');
+                  navigate('/Gallery');
 
                   setTimeout(() => {
                     projectsRef.current?.scrollIntoView({
@@ -285,7 +231,8 @@ export default function Projects({ preview = false, hideHeader = false }) {
               {selectedProject.photos.map((img, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300"
+                  onClick={() => setOpenImage(img.image)}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
                 >
                   <div className="overflow-hidden">
                     <img
@@ -298,6 +245,25 @@ export default function Projects({ preview = false, hideHeader = false }) {
               ))}
             </div>
 
+          </div>
+        )}
+
+        {/* Full Screen Image Modal */}
+        {openImage && (
+          <div className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center p-6 overflow-hidden">
+
+            <button
+              onClick={() => setOpenImage(null)}
+              className="absolute top-6 right-6 text-white hover:text-[#F39019] transition-colors z-10"
+            >
+              <X className="h-10 w-10" />
+            </button>
+
+            <img
+              src={openImage}
+              alt=""
+              className="max-w-full max-h-full object-contain rounded-xl"
+            />
           </div>
         )}
 
