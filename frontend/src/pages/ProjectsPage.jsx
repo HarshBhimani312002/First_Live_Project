@@ -7,7 +7,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero
-        breadcrumb="Projects"
+        breadcrumb="Gallery"
         title="A portfolio of homes we’re proud of."
         subtitle="Browse a selection of custom homes, house-and-land builds and luxury residences we’ve crafted across SA."
       />

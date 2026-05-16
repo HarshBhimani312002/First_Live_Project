@@ -49,8 +49,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/projects" className="hover:text-[#F39019]">
-                Projects
+              <Link to="/Gallery" className="hover:text-[#F39019]">
+                Gallery
               </Link>
             </li>
             <li>
@@ -59,8 +59,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/process" className="hover:text-[#F39019]">
-                How It Works
+              <Link to="/Packages" className="hover:text-[#F39019]">
+                Home & Land packages
               </Link>
             </li>
           </ul>

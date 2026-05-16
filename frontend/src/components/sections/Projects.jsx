@@ -95,6 +95,21 @@ export default function Projects({ preview = false, hideHeader = false }) {
     };
   }, [openImage]);
 
+  // ESC CLOSE
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') {
+        setOpenImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   return (
     <section id="projects" className="py-24 bg-[#FAFAF7]">
       <div className="max-w-7xl mx-auto px-6">
