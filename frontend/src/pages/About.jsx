@@ -116,10 +116,10 @@ We take the time to hear you, understand your lifestyle, and shape your vision i
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="title-accent mb-4 mx-auto block" />
-          <p className="text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
+          <p className="text-[#F39019] font-semibold tracking-[0.2em] uppercase mb-3 text-lg md:text-lg">
             Our Mission
           </p>
-          <h2 className="font-[Poppins] text-3xl md:text-4xl font-semibold text-[#0B1F3A] leading-tight">
+          <h2 className="font-[Poppins] text-3xl md:text-3xl font-semibold text-[#0B1F3A] leading-tight">
             Every NEST home is a quiet promise — built honestly, finished
             proudly.
           </h2>
@@ -137,10 +137,10 @@ We take the time to hear you, understand your lifestyle, and shape your vision i
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="title-accent mb-4 mx-auto block" />
-          <p className="text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
+          <p className="text-[#F39019] font-semibold tracking-[0.2em] text-lg md:text-lg uppercase mb-3">
             Our Vision
           </p>
-          <h2 className="font-[Poppins] text-3xl md:text-4xl font-semibold text-[#0B1F3A] leading-tight">
+          <h2 className="font-[Poppins] text-3xl md:text-3xl font-semibold text-[#0B1F3A] leading-tight">
             Building homes that feel as good as they look.
           </h2>
           <p className="mt-6 text-slate-600 text-lg leading-relaxed">
