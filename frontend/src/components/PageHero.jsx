@@ -12,10 +12,10 @@ export default function PageHero({ title, subtitle, breadcrumb }) {
         <div className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/60 mb-5">
           <Link to="/" className="hover:text-[#F39019]">Home</Link>
           <ChevronRight className="h-3 w-3" />
-          <span className="text-[#F39019]">{breadcrumb}</span>
+          <span className="text-[#F39019]" >{breadcrumb}</span>
         </div>
         <div className="title-accent mb-4" />
-        <h1 className="font-[Poppins] text-5xl md:text-6xl font-semibold leading-[1.05] max-w-3xl">
+        <h1 className="font-[Poppins] text-4xl md:text-4xl font-semibold leading-[1.05] max-w-3xl">
           {title}
         </h1>
         {subtitle && (
