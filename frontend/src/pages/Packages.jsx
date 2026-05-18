@@ -35,7 +35,7 @@ export default function Packages() {
         </p>
 
         {/* Input */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
+        {/* <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
 
           <div className="relative w-full">
             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/40" />
@@ -50,7 +50,7 @@ export default function Packages() {
           <button className="btn-primary rounded-xl px-8 py-4 font-semibold whitespace-nowrap">
             Notify Me
           </button>
-        </div>
+        </div> */}
 
         {/* Bottom Text */}
         <p className="mt-8 text-sm tracking-[0.2em] uppercase text-white/40">

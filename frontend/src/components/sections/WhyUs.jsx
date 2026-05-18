@@ -18,11 +18,11 @@ export default function WhyUs({ preview = false }) {
       <div>
         <div className="title-accent mb-4" />
 
-        <p className="text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
+        <p className="text-[#F39019] text-lg md:text-lg font-semibold tracking-[0.2em] text-xs uppercase mb-3">
           Why Choose NEST
         </p>
 
-        <h2 className="font-[Poppins] text-4xl md:text-5xl font-semibold text-[#0B1F3A] leading-tight max-w-4xl">
+        <h2 className="font-[Poppins] text-3xl md:text-3xl font-semibold text-[#0B1F3A] leading-tight max-w-4xl">
           Homes built on honesty, crafted with care.
         </h2>
       </div>

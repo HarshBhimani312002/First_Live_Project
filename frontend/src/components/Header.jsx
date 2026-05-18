@@ -97,7 +97,7 @@ export default function Header() {
               onClick={() => setOpenQuoteModal(true)}
               className="btn-primary rounded-md px-5 py-2.5 text-sm font-semibold"
             >
-              Get a Touch
+              Get in Touch
             </button>
           </div>
 
@@ -136,7 +136,7 @@ export default function Header() {
                 }}
                 className="btn-primary rounded-md px-5 py-2.5 text-sm font-semibold text-center"
               >
-                Get a Touch
+                Get in Touch
               </button>
             </div>
           </div>

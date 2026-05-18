@@ -120,11 +120,11 @@ export default function Projects({ preview = false, hideHeader = false }) {
             <div>
               <div className="title-accent mb-4" />
 
-              <p className="text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
+              <p className="text-lg md:text-lg text-[#F39019] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
                 Our Gallery
               </p>
 
-              <h2 className="font-[Poppins] text-4xl md:text-5xl font-semibold text-[#0B1F3A] leading-tight max-w-2xl">
+              <h2 className="font-[Poppins] text-2xl md:text-2xl font-semibold text-[#0B1F3A] leading-tight max-w-2xl">
                 A portfolio of homes we’re proud of.
               </h2>
             </div>
