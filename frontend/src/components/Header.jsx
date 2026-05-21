@@ -70,6 +70,7 @@ export default function Header() {
               src={LOGO}
               alt="NEST"
               className="h-12 w-12 object-contain rounded-md"
+              onClick={() => window.scrollTo(0, 0)}
             />
           </Link>
 
@@ -85,6 +86,7 @@ export default function Header() {
                     isActive ? "text-[#F39019]" : ""
                   }`
                 }
+                onClick={() => window.scrollTo(0, 0)}
               >
                 {item.icon ? item.icon : item.label}
               </NavLink>
