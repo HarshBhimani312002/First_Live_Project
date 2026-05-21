@@ -37,13 +37,13 @@ export default function Projects({ preview = false, hideHeader = false }) {
   const groupedProjects = [
     {
       id: 1,
-      name: 'HUGH',
+      name: 'Hugh',
       image: all[0]?.image,
       photos: [all[1], all[2], all[3], all[4], all[5], all[6], all[7], all[8], all[9], all[10], all[11], all[12]].filter(Boolean),
     },
     {
       id: 2,
-      name: 'LORAL',
+      name: 'Loral',
       image: all[13]?.image,
       photos: [all[14], all[15], all[16], all[17], all[18], all[19], all[20], all[21], all[22], all[23]].filter(Boolean),
     },
@@ -61,7 +61,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
     },
      {
       id: 5,
-      name: 'macdonnell',
+      name: 'Macdonnell',
       image: all[48]?.image,
       photos: [all[49], all[50], all[51], all[52], all[53], all[54], all[55], all[56], all[57], all[58]].filter(Boolean),
     },
