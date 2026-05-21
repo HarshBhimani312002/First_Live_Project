@@ -6,7 +6,7 @@ import { LOGO } from "../mock";
 import ContactCTA from "./sections/ContactCTA";
 
 const NAV = [
-  { label: "Home", to: "/", icon: <House className="w-5 h-5" /> },
+  // { label: "Home", to: "/", icon: <House className="w-5 h-5" /> },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Gallery", to: "/Gallery" },

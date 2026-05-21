@@ -39,27 +39,27 @@ export default function Footer() {
           <h4 className="font-semibold mb-4 text-[#F39019]">Useful Links</h4>
           <ul className="space-y-2 text-sm text-white/80">
             <li>
-              <Link to="/" className="hover:text-[#F39019]">
+              <Link to="/" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-[#F39019]">
+              <Link to="/about" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
                 About
               </Link>
             </li>
             <li>
-              <Link to="/Gallery" className="hover:text-[#F39019]">
+              <Link to="/Gallery" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
                 Gallery
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-[#F39019]">
+              <Link to="/services" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/Packages" className="hover:text-[#F39019]">
+              <Link to="/Packages" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
                 Home & Land packages
               </Link>
             </li>

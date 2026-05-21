@@ -37,25 +37,38 @@ export default function Projects({ preview = false, hideHeader = false }) {
   const groupedProjects = [
     {
       id: 1,
-      name: 'HUGH Ave Parahills',
+      name: 'HUGH',
       image: all[0]?.image,
-      photos: [all[1], all[2], all[3], all[4], all[5], all[6], all[7], all[8], all[9]].filter(Boolean),
+      photos: [all[1], all[2], all[3], all[4], all[5], all[6], all[7], all[8], all[9], all[10], all[11], all[12]].filter(Boolean),
     },
     {
       id: 2,
-      name: 'LORAL St. Parahills',
-      image: all[10]?.image,
-      photos: [all[11], all[12], all[13], all[14], all[15], all[16], all[17], all[18], all[19]].filter(Boolean),
+      name: 'LORAL',
+      image: all[13]?.image,
+      photos: [all[14], all[15], all[16], all[17], all[18], all[19], all[20], all[21], all[22], all[23]].filter(Boolean),
     },
     {
       id: 3,
-      name: 'Wendy Ave Valley',
-      image: all[20]?.image,
-      photos: [all[21], all[22], all[23], all[24], all[25], all[26], all[27], all[28], all[29]].filter(Boolean),
+      name: 'Wendy',
+      image: all[24]?.image,
+      photos: [all[25], all[26], all[27], all[25], all[29], all[30], all[31], all[32], all[33], all[34],all[35]].filter(Boolean),
+    },
+     {
+      id: 4,
+      name: 'Coondoo',
+      image: all[36]?.image,
+      photos: [all[37], all[38], all[39], all[40], all[41], all[42], all[43], all[44], all[45], all[46], all[47]].filter(Boolean),
+    },
+     {
+      id: 5,
+      name: 'macdonnell',
+      image: all[48]?.image,
+      photos: [all[49], all[50], all[51], all[52], all[53], all[54], all[55], all[56], all[57], all[58]].filter(Boolean),
     },
   ];
 
-  const list = preview ? groupedProjects.slice(0, 3) : groupedProjects;
+  // const list = preview ? groupedProjects.slice(0, 3) : groupedProjects;
+  const list = groupedProjects;
 
   // selected project from URL
   const selectedProject = id
@@ -161,7 +174,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
         {/* Project Cards */}
         <div
           ref={projectsRef}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-7"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-7"
         >
           {list.map((p) => (
             <article
@@ -184,6 +197,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
                   src={p.image}
                   alt={p.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                   loading="lazy"
                 />
               </div>
 
@@ -254,6 +268,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
                       src={img.image}
                       alt=""
                       className="w-full h-80 object-cover group-hover:scale-105 transition duration-500"
+                       loading="lazy"
                     />
                   </div>
                 </div>
