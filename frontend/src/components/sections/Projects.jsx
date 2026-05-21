@@ -51,7 +51,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
       id: 3,
       name: 'Wendy',
       image: all[24]?.image,
-      photos: [all[25], all[26], all[27], all[25], all[29], all[30], all[31], all[32], all[33], all[34],all[35]].filter(Boolean),
+      photos: [all[25], all[26], all[27], all[28], all[29], all[30], all[31], all[32], all[33], all[34],all[35]].filter(Boolean),
     },
      {
       id: 4,
