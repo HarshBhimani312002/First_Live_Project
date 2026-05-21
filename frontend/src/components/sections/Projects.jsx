@@ -33,7 +33,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
       ? PROJECTS
       : PROJECTS.filter((p) => p.tag === filter);
 
-  // 3 project groups
+  // 5 project groups
   const groupedProjects = [
     {
       id: 1,
