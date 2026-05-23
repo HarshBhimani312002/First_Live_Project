@@ -36,7 +36,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/85 via-[#0B1F3A]/55 to-[#0B1F3A]/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/60 via-[#0B1F3A]/30 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
         <div className="max-w-3xl text-white fade-up">
