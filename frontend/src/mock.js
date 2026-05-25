@@ -1,20 +1,19 @@
 import heroImg from "./assets/nest_logo.png";
-import hero from "./assets/slide-1.jpeg";
+import hero from "./assets/Slider1_Hero.png";
 import about from "./assets/About_image.png";
 
 import prject1_image from "./assets/hero.png";
-import hero_img1 from "./assets/hero_img1.png";
-import hero_img2 from "./assets/hero_img2.png";
-import hero_img3 from "./assets/hero_img3.png";
-import hero_img4 from "./assets/hero_img4.png";
-import hero_img5 from "./assets/hero_img5.png";
-import hero_img6 from "./assets/hero_img6.png";
-import hero_img7 from "./assets/hero_img7.png";
-import hero_img8 from "./assets/hero_img8.png";
-import hero_img9 from "./assets/hero_img9.png";
-import hero_img10 from "./assets/hero_img10.png";
-import hero_img11 from "./assets/hero_img11.png";
-import hero_img12 from "./assets/hero_img12.png";
+import hero_img1 from "./assets/hero_img1.jpg";
+import hero_img2 from "./assets/hero_img2.jpg";
+import hero_img3 from "./assets/hero_img3.jpg";
+import hero_img4 from "./assets/hero_img4.jpg";
+import hero_img5 from "./assets/hero_img5.jpg";
+import hero_img6 from "./assets/hero_img6.jpg";
+import hero_img7 from "./assets/hero_img7.jpg";
+import hero_img8 from "./assets/hero_img8.jpg";
+import hero_img9 from "./assets/hero_img9.jpg";
+import hero_img10 from "./assets/hero_img10.jpg";
+import hero_img11 from "./assets/hero_img11.jpg";
 import project2_image from "./assets/Project2_Image.png";
 import project2_image1 from "./assets/Project2_Image1.png";
 import project2_image2 from "./assets/Project2_Image2.png";
@@ -36,37 +35,49 @@ import project3_image6 from "./assets/project3_image6.png";
 import project3_image7 from "./assets/project3_image7.png";
 import project3_image8 from "./assets/project3_image8.png";
 import project3_image9 from "./assets/project3_image9.png";
-import project3_image10 from "./assets/project3_image10.png";
-import project3_image11 from "./assets/project3_image11.png";
 import project4_image from "../src/assets/Project4_image.png";
-import project4_image1 from "../src/assets/Project4_image1.png";
-import project4_image2 from "../src/assets/Project4_image2.png";
-import project4_image3 from "../src/assets/Project4_image3.png";
-import project4_image4 from "../src/assets/Project4_image4.png";
-import project4_image5 from "../src/assets/Project4_image5.png";
-import project4_image6 from "../src/assets/Project4_image6.png";
-import project4_image7 from "../src/assets/Project4_image7.png";
-import project4_image8 from "../src/assets/Project4_image8.png";
-import project4_image9 from "../src/assets/Project4_image9.png";
-import project4_image10 from "../src/assets/Project4_image10.png";
-import project4_image11 from "../src/assets/Project4_image11.png";
-import project5_image from "./assets/project5_image.png"
-import project5_image1 from "./assets/project5_image1.png"
-import project5_image2 from "./assets/project5_image2.png"
-import project5_image3 from "./assets/project5_image3.png"
-import project5_image4 from "./assets/project5_image4.png"
-import project5_image5 from "./assets/project5_image5.png"
-import project5_image6 from "./assets/project5_image6.png"
-import project5_image7 from "./assets/project5_image7.png"
-import project5_image8 from "./assets/project5_image8.png"
-import project5_image9 from "./assets/project5_image9.png"
-import project5_image10 from "./assets/project5_image10.png"
-import slider2 from "./assets/slide-2.jpeg";
-import slider3 from "./assets/slide-3.jpeg";
+import project4_image1 from "../src/assets/Project4_image1.jpg";
+import project4_image2 from "../src/assets/Project4_image2.jpg";
+import project4_image3 from "../src/assets/Project4_image3.jpg";
+import project4_image4 from "../src/assets/Project4_image4.jpg";
+import project4_image5 from "../src/assets/Project4_image5.jpg";
+import project4_image6 from "../src/assets/Project4_image6.jpg";
+import project4_image7 from "../src/assets/Project4_image7.jpg";
+import project4_image8 from "../src/assets/Project4_image8.jpg";
+import project4_image9 from "../src/assets/Project4_image9.jpg";
+import project4_image10 from "../src/assets/Project4_image10.jpg";
+import project4_image11 from "../src/assets/Project4_image11.jpg";
+import project5_image from "./assets/project5_image.png";
+import project5_image1 from "./assets/project5_image1.png";
+import project5_image2 from "./assets/project5_image2.png";
+import project5_image3 from "./assets/project5_image3.png";
+import project5_image4 from "./assets/project5_image4.png";
+import project5_image5 from "./assets/project5_image5.png";
+import project5_image6 from "./assets/project5_image6.png";
+import project5_image7 from "./assets/project5_image7.png";
+import project5_image8 from "./assets/project5_image8.png";
+import project5_image9 from "./assets/project5_image9.png";
+import project5_image10 from "./assets/project5_image10.png";
+import project5_image11 from "./assets/project5_image11.png";
+import project5_image12 from "./assets/project5_image12.png";
+import project6_image from "./assets/project6_image.png";
+import project6_image1 from "./assets/project6_image1.png";
+import project6_image2 from "./assets/project6_image2.png";
+import project6_image3 from "./assets/project6_image3.png";
+import project6_image4 from "./assets/project6_image4.png";
+import project6_image5 from "./assets/project6_image5.png";
+import project6_image6 from "./assets/project6_image6.png";
+import project6_image7 from "./assets/project6_image7.png";
+import project6_image8 from "./assets/project6_image8.png";
+import project6_image9 from "./assets/project6_image9.png";
+import slider2 from "./assets/Slider2_Hero.png";
+import slider3 from "./assets/Slider3_Hero.png";
+import slider4 from "./assets/Slider4_Hero.png";
 
 export const HERO_IMAGE = hero;
 export const HERO_IMAGE2 = slider2;
 export const HERO_IMAGE3 = slider3;
+export const HERO_IMAGE4 = slider4;
 
 export const ABOUT_IMAGE = about;
 
@@ -122,191 +133,227 @@ export const PROJECTS = [
   },
   {
     id: 13,
-    image: hero_img12,
-  },
-  {
-    id: 14,
     image: project2_image,
   },
   {
-    id: 15,
+    id: 14,
     image: project2_image1,
   },
   {
-    id: 16,
+    id: 15,
     image: project2_image2,
   },
   {
-    id: 17,
+    id: 16,
     image: project2_image3,
   },
   {
-    id: 18,
+    id: 17,
     image: project2_image4,
   },
   {
-    id: 19,
+    id: 18,
     image: project2_image5,
   },
   {
-    id: 20,
+    id: 19,
     image: project2_image6,
   },
   {
-    id: 21,
+    id: 20,
     image: project2_image7,
   },
   {
-    id: 22,
+    id: 21,
     image: project2_image8,
   },
   {
-    id: 23,
+    id: 22,
     image: project2_image9,
   },
   {
-    id: 24,
+    id: 23,
     image: project2_image10,
   },
   {
-    id: 25,
+    id: 24,
     image: project3_image,
   },
   {
-    id: 26,
+    id: 25,
     image: project3_image1,
   },
   {
-    id: 27,
+    id: 26,
     image: project3_image2,
   },
   {
-    id: 28,
+    id: 27,
     image: project3_image3,
   },
   {
-    id: 29,
+    id: 28,
     image: project3_image4,
   },
   {
-    id: 30,
+    id: 29,
     image: project3_image5,
   },
   {
-    id: 31,
+    id: 30,
     image: project3_image6,
   },
   {
-    id: 32,
+    id: 31,
     image: project3_image7,
   },
   {
-    id: 33,
+    id: 32,
     image: project3_image8,
   },
   {
-    id: 34,
+    id: 33,
     image: project3_image9,
   },
-    {
-    id: 35,
-    image: project3_image10,
-  },
-    {
-    id: 36,
-    image: project3_image11,
-  },
-    {
-    id: 37,
+  {
+    id: 34,
     image: project4_image,
   },
-    {
-    id: 38,
+  {
+    id: 35,
     image: project4_image1,
   },
-    {
-    id: 39,
+  {
+    id: 36,
     image: project4_image2,
   },
-    {
-    id: 40,
+  {
+    id: 37,
     image: project4_image3,
   },
-    {
-    id: 41,
+  {
+    id: 38,
     image: project4_image4,
   },
-    {
-    id: 42,
+  {
+    id: 39,
     image: project4_image5,
   },
-    {
-    id: 43,
+  {
+    id: 40,
     image: project4_image6,
   },
-    {
-    id: 44,
+  {
+    id: 41,
     image: project4_image7,
   },
-    {
-    id: 45,
+  {
+    id: 42,
     image: project4_image8,
   },
-    {
-    id: 46,
+  {
+    id: 43,
     image: project4_image9,
   },
-    {
-    id: 47,
+  {
+    id: 44,
     image: project4_image10,
   },
-    {
-    id: 48,
+  {
+    id: 45,
     image: project4_image11,
   },
-    {
-    id: 49,
+  {
+    id: 46,
     image: project5_image,
   },
-    {
-    id: 50,
+  {
+    id: 47,
     image: project5_image1,
   },
-    {
-    id: 51,
+  {
+    id: 48,
     image: project5_image2,
   },
-    {
-    id: 52,
+  {
+    id: 49,
     image: project5_image3,
   },
-    {
-    id: 53,
+  {
+    id: 50,
     image: project5_image4,
   },
-    {
-    id: 54,
+  {
+    id: 51,
     image: project5_image5,
   },
-    {
-    id: 55,
+  {
+    id: 52,
     image: project5_image6,
   },
-    {
-    id: 56,
+  {
+    id: 53,
     image: project5_image7,
   },
-    {
-    id: 57,
+  {
+    id: 54,
     image: project5_image8,
   },
-    {
-    id: 58,
+  {
+    id: 55,
     image: project5_image9,
   },
-    {
-    id: 59,
+  {
+    id: 56,
     image: project5_image10,
+  },
+  {
+    id: 57,
+    image: project5_image11,
+  },
+  {
+    id: 58,
+    image: project5_image12,
+  },
+  {
+    id: 59,
+    image: project6_image,
+  },
+  {
+    id: 60,
+    image: project6_image1,
+  },
+  {
+    id: 61,
+    image: project6_image2,
+  },
+  {
+    id: 62,
+    image: project6_image3,
+  },
+  {
+    id: 63,
+    image: project6_image4,
+  },
+  {
+    id: 64,
+    image: project6_image5,
+  },
+  {
+    id: 65,
+    image: project6_image6,
+  },
+  {
+    id: 66,
+    image: project6_image7,
+  },
+  {
+    id: 67,
+    image: project6_image8,
+  },
+  {
+    id: 68,
+    image: project6_image9,
   },
 ];
 

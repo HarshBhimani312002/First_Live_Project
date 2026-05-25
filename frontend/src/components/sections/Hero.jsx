@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
-import { HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3 } from "../../mock";
+import { HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3 ,HERO_IMAGE4 } from "../../mock";
 
 export default function Hero() {
-  const images = [HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3];
+  const images = [HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3,HERO_IMAGE4];
 
   const [currentImage, setCurrentImage] = useState(0);
 

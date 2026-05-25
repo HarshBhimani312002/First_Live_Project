@@ -6,6 +6,7 @@ import Projects from '../components/sections/Projects';
 import Process from '../components/sections/Process';
 import Testimonials from '../components/sections/Testimonials';
 import ContactCTA from '../components/sections/ContactCTA';
+import TrustedPartners from "../components/sections/TrustedPartners"
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
       <WhyUs preview />
       <Services preview />
       <Projects preview />
+      <TrustedPartners preview />
       <Process />
+
       <Testimonials />
       <ContactCTA />
     </>
