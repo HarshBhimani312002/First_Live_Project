@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
-
 import { ArrowUpRight, X } from "lucide-react";
 import { PROJECTS } from "../../mock";
 
