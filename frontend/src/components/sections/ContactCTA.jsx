@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Send, Phone, Mail, MapPin, X } from "lucide-react";
+import { Send, Phone, Mail, MapPin, X ,FileBadge} from "lucide-react";
 import { toast } from "../../hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
-export default function ContactCTA({
-  isModal = false,
-  onClose = () => {},
-}) {
+export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -28,11 +25,9 @@ export default function ContactCTA({
       newErrors.email = "Invalid email";
     }
 
-    if (!form.phone.trim())
-      newErrors.phone = "Phone is required";
+    if (!form.phone.trim()) newErrors.phone = "Phone is required";
 
-    if (!form.message.trim())
-      newErrors.message = "Message is required";
+    if (!form.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
 
@@ -45,8 +40,7 @@ export default function ContactCTA({
     if (!validate()) {
       toast({
         title: "Validation Error",
-        description:
-          "Please fill all fields correctly.",
+        description: "Please fill all fields correctly.",
       });
 
       return;
@@ -63,9 +57,9 @@ export default function ContactCTA({
           email: form.email,
           phone: form.phone,
           message: form.message,
-          to_email: "nesthomessa@gmail.com",
+          to_email: "info@nesthomessa.com.au",
         },
-        "JQilC-dK6I0EYXwLE"
+        "JQilC-dK6I0EYXwLE",
       );
 
       setForm({
@@ -79,8 +73,7 @@ export default function ContactCTA({
 
       toast({
         title: "Thank you!",
-        description:
-          "Enquiry sent successfully.",
+        description: "Enquiry sent successfully.",
       });
 
       if (isModal) {
@@ -91,8 +84,7 @@ export default function ContactCTA({
 
       toast({
         title: "Error",
-        description:
-          "Failed to send enquiry.",
+        description: "Failed to send enquiry.",
       });
     }
 
@@ -101,10 +93,8 @@ export default function ContactCTA({
 
   const content = (
     <div className="grid lg:grid-cols-2">
-
       {/* Left Side */}
       <div className="bg-[#0B1F3A] text-white p-8 md:p-9 relative overflow-hidden">
-
         <div className="absolute -bottom-10 -right-10 w-52 h-52 rounded-full bg-[#F39019]/15 blur-2xl" />
 
         <div className="title-accent mb-4" />
@@ -114,19 +104,15 @@ export default function ContactCTA({
         </p>
 
         <h2 className="font-[Poppins] text-4xl md:text-5xl font-semibold leading-tight mb-5">
-          Let’s build your{" "}
-          <span className="text-[#F39019]">
-            dream home
-          </span>.
+          Let’s build your <span className="text-[#F39019]">dream home</span>.
         </h2>
 
         <p className="text-white/75 leading-relaxed mb-10">
-          Tell us a little about your project —
-          we’ll be in touch within 24 hours.
+          Tell us a little about your project — we’ll be in touch within 24
+          hours.
         </p>
 
         <ul className="space-y-5 relative">
-
           <li className="flex items-start gap-4">
             <div className="h-11 w-11 rounded-md bg-[#F39019] grid place-items-center shrink-0">
               <MapPin className="h-5 w-5 text-[#0B1F3A]" />
@@ -153,9 +139,7 @@ export default function ContactCTA({
                 Call us
               </div>
 
-              <div className="font-medium">
-                +61417862762
-              </div>
+              <div className="font-medium">+61417862762</div>
             </div>
           </li>
 
@@ -169,18 +153,27 @@ export default function ContactCTA({
                 Email
               </div>
 
-              <div className="font-medium">
-                nesthomessa@gmail.com
-              </div>
+              <div className="font-medium">info@nesthomessa.com.au</div>
             </div>
           </li>
+          <li className="flex items-start gap-4">
+            <div className="h-11 w-11 rounded-md bg-[#F39019] grid place-items-center shrink-0">
+              <FileBadge className="h-5 w-5 text-[#0B1F3A]" />
+            </div>
 
+            <div>
+              <div className="text-xs tracking-widest uppercase text-white/60">
+                Licence
+              </div>
+
+              <div className="font-medium text-sm">BLD354512</div>
+            </div>
+          </li>
         </ul>
       </div>
 
       {/* Right Side */}
       <div className="bg-white p-8 md:p-9">
-
         <h3 className="font-[Poppins] text-2xl font-semibold text-[#0B1F3A] mb-2">
           Request a consultation
         </h3>
@@ -189,13 +182,8 @@ export default function ContactCTA({
           Fill in the form — a real human will reply.
         </p>
 
-        <form
-          onSubmit={onSubmit}
-          className="space-y-5"
-        >
-
+        <form onSubmit={onSubmit} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-5">
-
             <div>
               <label className="text-xs font-semibold tracking-widest uppercase text-slate-500">
                 Your name
@@ -214,9 +202,7 @@ export default function ContactCTA({
               />
 
               {errors.name && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.name}
-                </p>
+                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
               )}
             </div>
 
@@ -237,12 +223,9 @@ export default function ContactCTA({
               />
 
               {errors.phone && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.phone}
-                </p>
+                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
               )}
             </div>
-
           </div>
 
           <div>
@@ -264,9 +247,7 @@ export default function ContactCTA({
             />
 
             {errors.email && (
-              <p className="text-red-500 text-xs mt-1">
-                {errors.email}
-              </p>
+              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
             )}
           </div>
 
@@ -288,9 +269,7 @@ export default function ContactCTA({
             />
 
             {errors.message && (
-              <p className="text-red-500 text-xs mt-1">
-                {errors.message}
-              </p>
+              <p className="text-red-500 text-xs mt-1">{errors.message}</p>
             )}
           </div>
 
@@ -303,12 +282,10 @@ export default function ContactCTA({
               "Sending..."
             ) : (
               <>
-                Send Enquiry{" "}
-                <Send className="h-4 w-4" />
+                Send Enquiry <Send className="h-4 w-4" />
               </>
             )}
           </button>
-
         </form>
       </div>
     </div>
@@ -319,7 +296,6 @@ export default function ContactCTA({
     return (
       <div className="fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-6 overflow-hidden">
         <div className="bg-white rounded-3xl overflow-hidden max-w-4xl w-full relative">
-
           <button
             onClick={onClose}
             className="absolute top-5 right-5 z-50 h-11 w-11 rounded-full bg-slate-100 hover:bg-slate-200 grid place-items-center"

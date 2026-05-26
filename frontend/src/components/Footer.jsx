@@ -6,7 +6,7 @@ import {
   Phone,
   Mail,
   MapPin,
-  MessageCircle,
+  FileBadge,
 } from "lucide-react";
 import { LOGO } from "../mock";
 
@@ -39,27 +39,47 @@ export default function Footer() {
           <h4 className="font-semibold mb-4 text-[#F39019]">Useful Links</h4>
           <ul className="space-y-2 text-sm text-white/80">
             <li>
-              <Link to="/" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                to="/"
+                className="hover:text-[#F39019]"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                to="/about"
+                className="hover:text-[#F39019]"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link to="/Gallery" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                to="/Gallery"
+                className="hover:text-[#F39019]"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Gallery
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                to="/services"
+                className="hover:text-[#F39019]"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/Packages" className="hover:text-[#F39019]" onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                to="/Packages"
+                className="hover:text-[#F39019]"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Home & Land packages
               </Link>
             </li>
@@ -82,7 +102,11 @@ export default function Footer() {
             </li> */}
             <li className="flex items-start gap-2">
               <Mail className="h-4 w-4 mt-0.5 text-[#F39019]" />{" "}
-              nesthomessa@gmail.com
+              info@nesthomessa.com.au
+            </li>
+            <li className="flex items-start gap-2">
+              <FileBadge className="h-4 w-4 mt-0.5 text-[#F39019]" />
+              BLD354512
             </li>
           </ul>
         </div>
