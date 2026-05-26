@@ -71,6 +71,8 @@ export default function Header() {
               alt="NEST"
               className="h-12 w-12 object-contain rounded-md"
               onClick={() => window.scrollTo(0, 0)}
+              loading="eager"
+              fetchpriority="high"
             />
           </Link>
 

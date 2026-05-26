@@ -46,10 +46,8 @@ export default function TrustedPartners() {
     <>
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-
           {/* TOP SECTION */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-
             <div>
               {/* Orange Line */}
               <div className="w-14 h-[3px] bg-[#F39019] mb-4" />
@@ -64,13 +62,11 @@ export default function TrustedPartners() {
                 Building strong relationships with trusted brands.
               </h2>
             </div>
-
           </div>
 
           {/* AUTO SCROLL LOGOS */}
           <div className="relative overflow-hidden py-6">
             <div className="flex items-center gap-20 partner-scroll w-max">
-
               {[...partners, ...partners].map((partner, idx) => (
                 <div
                   key={idx}
@@ -80,10 +76,11 @@ export default function TrustedPartners() {
                     src={partner.logo}
                     alt={partner.name}
                     className="h-20 w-auto object-contain grayscale-0 hover:grayscale-0 hover:scale-105 transition-all duration-300"
+                    loading="eager"
+                    fetchpriority="high"
                   />
                 </div>
               ))}
-
             </div>
           </div>
         </div>

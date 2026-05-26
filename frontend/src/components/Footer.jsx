@@ -20,6 +20,8 @@ export default function Footer() {
               src={LOGO}
               alt="NEST"
               className="h-14 w-14 object-contain bg-white rounded-lg p-1"
+              loading="eager"
+              fetchpriority="high"
             />
             <div>
               <div className="font-semibold text-xl tracking-wider">NEST</div>

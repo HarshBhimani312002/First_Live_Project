@@ -332,7 +332,8 @@ export default function Projects({ preview = false, hideHeader = false }) {
                     src={p.image}
                     alt={p.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                   />
                 </div>
 
@@ -408,7 +409,8 @@ export default function Projects({ preview = false, hideHeader = false }) {
                       src={img.image}
                       alt=""
                       className="w-full h-80 object-cover group-hover:scale-105 transition duration-500"
-                      loading="lazy"
+                      loading="eager"
+                      fetchpriority="high"
                     />
                   </div>
                 </div>
@@ -431,6 +433,8 @@ export default function Projects({ preview = false, hideHeader = false }) {
               src={openImage}
               alt=""
               className="max-w-full max-h-full object-contain rounded-xl"
+              loading="eager"
+              fetchpriority="high"
             />
           </div>
         )}
