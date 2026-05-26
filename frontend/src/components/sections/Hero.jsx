@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
-import { HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3 ,HERO_IMAGE4 } from "../../mock";
+import { HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3, HERO_IMAGE4 } from "../../mock";
 
 export default function Hero() {
-  const images = [HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3,HERO_IMAGE4];
+  const images = [HERO_IMAGE, HERO_IMAGE2, HERO_IMAGE3, HERO_IMAGE4];
 
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -25,13 +25,16 @@ export default function Hero() {
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute inset-0 slow-zoom transition-opacity duration-1000 ${
+          className={`absolute inset-0 ${
+            index === 2 ? "" : "slow-zoom"
+          } transition-opacity duration-1000 ${
             index === currentImage ? "opacity-100" : "opacity-0"
           }`}
           style={{
             backgroundImage: `url(${img})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: index === 2 ? "center top" : "center",
+            backgroundRepeat: "no-repeat",
           }}
         />
       ))}
