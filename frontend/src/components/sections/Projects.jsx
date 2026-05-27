@@ -228,55 +228,6 @@ export default function Projects({ preview = false, hideHeader = false }) {
         )}
 
         {hideHeader && !preview && <></>}
-
-        {/* Project Cards */}
-        {/* <div
-          ref={projectsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-7"
-        >
-          {list.map((p) => (
-            <article
-              key={p.id}
-              onClick={() => {
-                if (!isProjectsPage) return;
-
-                sessionStorage.setItem('scrollToGallery', 'true');
-
-                navigate(`/Gallery/${p.id}`);
-              }}
-              className={`project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-all duration-300 ${
-                isProjectsPage
-                  ? 'cursor-pointer'
-                  : 'pointer-events-none'
-              }`}
-            >
-              <div className="relative h-60 overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                   loading="lazy"
-                />
-              </div>
-
-              <div className="p-5">
-                <h3 className="font-[Poppins] text-xl font-semibold text-[#0B1F3A]">
-                  {p.name}
-                </h3>
-
-                {isProjectsPage ? (
-                  <p className="text-sm text-slate-500 mt-2">
-                    Click to explore gallery
-                  </p>
-                ) : (
-                  <p className="text-sm text-slate-500 mt-2">
-                    Click “View Gallery” to browse project galleries
-                  </p>
-                )}
-              </div>
-            </article>
-          ))}
-        </div> */}
         <div className="relative overflow-hidden">
           {/* Left Arrow */}
           <button

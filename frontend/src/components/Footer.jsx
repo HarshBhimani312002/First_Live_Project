@@ -92,22 +92,23 @@ export default function Footer() {
           <h4 className="font-semibold mb-4 text-[#F39019]">Get In Touch</h4>
           <ul className="space-y-3 text-sm text-white/80">
             <li className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 mt-0.5 text-[#F39019]" /> 11A Newcombe
-              Dr Gilles Plains SA 5086
+              <MapPin className="h-4 w-4 mt-0.5 text-[#F39019] flex-shrink-0" />
+              11A Newcombe Dr Gilles Plains SA 5086
             </li>
+
             <li className="flex items-start gap-2">
-              <Phone className="h-4 w-4 mt-0.5 text-[#F39019]" /> +61417862762
-            </li>
-            {/* <li className="flex items-start gap-2">
-              <MessageCircle className="h-4 w-4 mt-0.5 text-[#F39019]" />{" "}
+              <Phone className="h-4 w-4 mt-0.5 text-[#F39019] flex-shrink-0" />
               +61417862762
-            </li> */}
-            <li className="flex items-start gap-2">
-              <Mail className="h-4 w-4 mt-0.5 text-[#F39019]" />{" "}
-              info@nesthomessa.com.au
             </li>
+
+            <li className="flex items-start gap-2 min-w-0">
+              <Mail className="h-4 w-4 mt-0.5 text-[#F39019] flex-shrink-0" />
+
+              <span className="break-all">info@nesthomessa.com.au</span>
+            </li>
+
             <li className="flex items-start gap-2">
-              <FileBadge className="h-4 w-4 mt-0.5 text-[#F39019]" />
+              <FileBadge className="h-4 w-4 mt-0.5 text-[#F39019] flex-shrink-0" />
               BLD354512
             </li>
           </ul>
@@ -138,7 +139,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
         <div>© 2026 NEST Homes. All rights reserved.</div>
-        <div>Builder License: BLD354512</div>
+        {/* <div>Builder License: BLD354512</div> */}
       </div>
     </footer>
   );
