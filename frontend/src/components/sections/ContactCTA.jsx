@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Send, Phone, Mail, MapPin, X ,FileBadge} from "lucide-react";
+import { Send, Phone, Mail, MapPin, X, FileBadge } from "lucide-react";
 import { toast } from "../../hooks/use-toast";
-import emailjs from "@emailjs/browser";
 
 export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   const [form, setForm] = useState({
@@ -49,18 +48,19 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     setSubmitting(true);
 
     try {
-      await emailjs.send(
-        "service_28j84ag",
-        "template_v74v71b",
-        {
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-          to_email: "info@nesthomessa.com.au",
+      const response = await fetch("http://localhost:5000/send-enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        "JQilC-dK6I0EYXwLE",
-      );
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error("Failed to send enquiry");
+      }
 
       setForm({
         name: "",
