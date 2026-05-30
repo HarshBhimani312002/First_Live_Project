@@ -19,13 +19,10 @@ const transporter = nodemailer.createTransport({
 app.post("/send-enquiry", async (req, res) => {
   try {
     const { name, phone, email, message } = req.body;
-
     await transporter.sendMail({
-      from: "<19dcs013@charusat.edu.in>",
+      from: process.env.EMAIL_USER,
       to: "19dcs013@charusat.edu.in",
-      replyTo: {
-        address: email,
-      },
+      replyTo: email,
       subject: "New Enquiry - Nest Homes",
       html: `
     <h2>New Enquiry</h2>
