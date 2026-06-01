@@ -25,27 +25,28 @@ function TitleManager() {
 
     switch (location.pathname) {
       case "/":
-        document.title = "Nest Homes";
+        document.title =
+          "Nest Home SA | Home Renovation & Maintenance Adelaide";
         break;
 
       case "/about":
-        document.title = "About | Nest Homes";
+        document.title = "About Nest Home SA";
         break;
 
       case "/services":
-        document.title = "Services | Nest Homes";
+        document.title = "Services | Nest Home SA";
         break;
 
       case "/Gallery":
-        document.title = "Gallery | Nest Homes";
+        document.title = "Gallery | Nest Home SA";
         break;
 
       case "/Packages":
-        document.title = "Packages | Nest Homes";
+        document.title = "Packages | Nest Home SA";
         break;
 
       case "/contact":
-        document.title = "Contact | Nest Homes";
+        document.title = "Contact | Nest Home SA";
         break;
 
       default:
