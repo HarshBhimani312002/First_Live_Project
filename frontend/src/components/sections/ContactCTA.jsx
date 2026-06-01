@@ -23,8 +23,13 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
 
     if (!form.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "Invalid email";
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|co\.in|in|com\.au|au)$/i.test(
+        form.email.trim(),
+      )
+    ) {
+      newErrors.email =
+        "Please enter a valid email address (e.g. example@gmail.com)";
     }
 
     if (!form.phone.trim()) {
@@ -34,14 +39,22 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     }
 
     if (!form.message.trim()) newErrors.message = "Message is required";
-    if (!captchaValue) {
-      alert("Please confirm you are not a robot.");
-      return;
-    }
 
+    // એરર સ્ટેટ અપડેટ કરો
     setErrors(newErrors);
 
-    return Object.keys(newErrors).length === 0;
+    // જો કોઈ પણ ભૂલ (જેમ કે ઈમેઈલમાં f@f) હોય, તો અહીંથી જ સીધું false રિટર્ન કરો
+    if (Object.keys(newErrors).length > 0) {
+      return false;
+    }
+
+    // જો બધી ફિલ્ડ સાચી હોય, તો જ કેપ્ચા ચેક કરો
+    if (!captchaValue) {
+      alert("Please confirm you are not a robot.");
+      return false;
+    }
+
+    return true;
   };
 
   const onSubmit = async (e) => {
