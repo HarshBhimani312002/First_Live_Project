@@ -34,6 +34,10 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     }
 
     if (!form.message.trim()) newErrors.message = "Message is required";
+    if (!captchaValue) {
+      alert("Please confirm you are not a robot.");
+      return;
+    }
 
     setErrors(newErrors);
 
@@ -44,11 +48,6 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     e.preventDefault();
 
     if (!validate()) {
-      toast({
-        title: "Validation Error",
-        description: "Please fill all fields correctly.",
-      });
-
       return;
     }
 
@@ -206,6 +205,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
                 }
                 className="mt-2 w-full px-4 py-3 rounded-md border border-slate-200 outline-none"
                 placeholder="John Smith"
+                required
               />
 
               {errors.name && (
@@ -227,6 +227,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
                   })
                 }
                 className="mt-2 w-full px-4 py-3 rounded-md border border-slate-200 outline-none"
+                required
               />
 
               {errors.phone && (
@@ -251,6 +252,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
               }
               className="mt-2 w-full px-4 py-3 rounded-md border border-slate-200 outline-none"
               placeholder="you@email.com"
+              required
             />
 
             {errors.email && (
@@ -273,6 +275,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
                 })
               }
               className="mt-2 w-full px-4 py-3 rounded-md border border-slate-200 outline-none resize-none"
+              required
             />
 
             {errors.message && (
@@ -287,14 +290,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
           </div>
           <button
             type="submit"
-            disabled={
-              submitting ||
-              !form.name.trim() ||
-              !form.phone.trim() ||
-              !form.email.trim() ||
-              !form.message.trim() ||
-              !captchaValue
-            }
+            disabled={submitting}
             className="btn-primary rounded-md px-6 py-3.5 font-semibold inline-flex items-center gap-2"
           >
             {submitting ? (
