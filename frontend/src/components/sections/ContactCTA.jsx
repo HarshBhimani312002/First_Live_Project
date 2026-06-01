@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Send, Phone, Mail, MapPin, X, FileBadge } from "lucide-react";
 import { toast } from "../../hooks/use-toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   const [form, setForm] = useState({
@@ -9,6 +10,8 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     phone: "",
     message: "",
   });
+
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -177,16 +180,16 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
       </div>
 
       {/* Right Side */}
-      <div className="bg-white p-8 md:p-9">
+      <div className="bg-white p-8 md:p-7">
         <h3 className="font-[Poppins] text-2xl font-semibold text-[#0B1F3A] mb-2">
           Request a consultation
         </h3>
 
-        <p className="text-slate-500 text-sm mb-8">
+        <p className="text-slate-500 text-sm mb-5">
           Fill in the form — a real human will reply.
         </p>
 
-        <form onSubmit={onSubmit} className="space-y-5">
+        <form onSubmit={onSubmit} className="space-y-4">
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="text-xs font-semibold tracking-widest uppercase text-slate-500">
@@ -261,7 +264,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
             </label>
 
             <textarea
-              rows="4"
+              rows="3"
               value={form.message}
               onChange={(e) =>
                 setForm({
@@ -276,10 +279,22 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
               <p className="text-red-500 text-xs mt-1">{errors.message}</p>
             )}
           </div>
-
+          <div>
+            <ReCAPTCHA
+              sitekey="6LfTVQctAAAAAAXVF4sjU4Ko0uIrEwpJZMHHrv-8"
+              onChange={(value) => setCaptchaValue(value)}
+            />
+          </div>
           <button
             type="submit"
-            disabled={submitting}
+            disabled={
+              submitting ||
+              !form.name.trim() ||
+              !form.phone.trim() ||
+              !form.email.trim() ||
+              !form.message.trim() ||
+              !captchaValue
+            }
             className="btn-primary rounded-md px-6 py-3.5 font-semibold inline-flex items-center gap-2"
           >
             {submitting ? (
