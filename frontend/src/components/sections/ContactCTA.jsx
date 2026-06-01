@@ -24,7 +24,11 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
       newErrors.email = "Invalid email";
     }
 
-    if (!form.phone.trim()) newErrors.phone = "Phone is required";
+    if (!form.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10,15}$/.test(form.phone)) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
 
     if (!form.message.trim()) newErrors.message = "Message is required";
 
@@ -216,7 +220,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
                 onChange={(e) =>
                   setForm({
                     ...form,
-                    phone: e.target.value,
+                    phone: e.target.value.replace(/\D/g, ""),
                   })
                 }
                 className="mt-2 w-full px-4 py-3 rounded-md border border-slate-200 outline-none"
