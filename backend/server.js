@@ -1,42 +1,46 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+const sgMail = require("@sendgrid/mail");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.post("/send-enquiry", async (req, res) => {
   try {
-    const { name, phone, email, message } = req.body;
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: "19dcs013@charusat.edu.in",
+    const { name, email, phone, message } = req.body;
+
+    await sgMail.send({
+      to: "vish@nesthomessa.com.au",
+      from: "info@nesthomessa.com.au", // verified domain email
       replyTo: email,
-      subject: "New Enquiry - Nest Homes",
+      subject: "New Website Enquiry",
       html: `
-    <h2>New Enquiry</h2>
-    <p><b>Name:</b> ${name}</p>
-    <p><b>Phone:</b> ${phone}</p>
-    <p><b>Email:</b> ${email}</p>
-    <p><b>Message:</b> ${message}</p>
-  `,
+        <h2>New Enquiry Received</h2>
+
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
     });
 
-    res.json({ success: true });
+    res.json({
+      success: true,
+    });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ success: false });
+    console.log("===== SENDGRID ERROR =====");
+    console.log(JSON.stringify(error.response?.body, null, 2));
+
+    res.status(500).json({
+      success: false,
+    });
   }
 });
 
