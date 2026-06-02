@@ -1,30 +1,26 @@
 import sgMail from "@sendgrid/mail";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-console.log("API KEY EXISTS:", !!process.env.SENDGRID_API_KEY);
+sgMail.setApiKey("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");
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({
-      success: false,
-      message: "Method not allowed",
-    });
+    return res.status(405).json({ success: false });
   }
 
-  try {
-    const { name, email, phone, message } = req.body;
+  const { name, email, phone, message } = req.body;
 
+  try {
     await sgMail.send({
-      to: "vish@nesthomessa.com.au",
-      from: "info@nesthomessa.com.au",
-      replyTo: email,
+      to: "bhimaniharsh402@gmail.com",   //vish@nesthomessa.com.au
+      from: "info@nesthomessa.com.au", // SendGrid verified sender
       subject: "New Website Enquiry",
-      html: `
-        <h2>New Enquiry Received</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong> ${message}</p>
+      text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
       `,
     });
 
@@ -32,16 +28,10 @@ export default async function handler(req, res) {
       success: true,
     });
   } catch (error) {
-    console.error("===== SENDGRID ERROR =====");
     console.error(error);
-
-    if (error.response) {
-      console.error(JSON.stringify(error.response.body, null, 2));
-    }
 
     return res.status(500).json({
       success: false,
-      error: error.message,
     });
   }
 }
