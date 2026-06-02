@@ -67,7 +67,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     setSubmitting(true);
 
     try {
-      const response = await fetch("/api/send-enquiry", {
+      const response = await fetch("http://localhost:5000/api/send-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
