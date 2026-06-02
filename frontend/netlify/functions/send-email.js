@@ -1,19 +1,19 @@
-const sgMail = require("@sendgrid/mail");
+import sgMail from "@sendgrid/mail";
 
-exports.handler = async (event) => {
+export async function handler(event) {
   try {
-    const { name,phone, email, message } = JSON.parse(event.body);
+    const { name, phone, email, message } = JSON.parse(event.body);
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     await sgMail.send({
-      to: "vish@nesthomessa.com.au", // tamaro email
-      from: "info@nesthomessa.com.au", // SendGrid verified email/domain
-      subject: "New Contact Form Submission",
+      to: "vish@nesthomessa.com.au",
+      from: "info@nesthomessa.com.au",
+      subject: "New Website Enquiry",
       html: `
         <h2>New Contact Form Message</h2>
         <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Name:</strong> ${phone}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
@@ -21,14 +21,9 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        message: "Email sent successfully",
-      }),
+      body: JSON.stringify({ success: true }),
     };
   } catch (error) {
-    console.error(error);
-
     return {
       statusCode: 500,
       body: JSON.stringify({
@@ -37,4 +32,4 @@ exports.handler = async (event) => {
       }),
     };
   }
-};
+}
