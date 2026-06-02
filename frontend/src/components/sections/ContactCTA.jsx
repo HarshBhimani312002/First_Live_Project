@@ -12,7 +12,6 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   });
 
   const [captchaValue, setCaptchaValue] = useState(null);
-
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
@@ -39,16 +38,12 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     }
 
     if (!form.message.trim()) newErrors.message = "Message is required";
-
-    // એરર સ્ટેટ અપડેટ કરો
     setErrors(newErrors);
 
-    // જો કોઈ પણ ભૂલ (જેમ કે ઈમેઈલમાં f@f) હોય, તો અહીંથી જ સીધું false રિટર્ન કરો
     if (Object.keys(newErrors).length > 0) {
       return false;
     }
 
-    // જો બધી ફિલ્ડ સાચી હોય, તો જ કેપ્ચા ચેક કરો
     if (!captchaValue) {
       alert("Please confirm you are not a robot.");
       return false;
@@ -67,17 +62,20 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     setSubmitting(true);
 
     try {
-      const response = await fetch("/send-email.php", {
+      const result = await fetch("/.netlify/functions/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
       });
 
-      const result = await response.json();
-
-      if (!result.success) {
+      if (!result.ok) {
         throw new Error("Failed to send enquiry");
       }
 
