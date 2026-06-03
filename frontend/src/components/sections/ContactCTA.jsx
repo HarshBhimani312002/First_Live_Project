@@ -334,8 +334,8 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   // Modal View
   if (isModal) {
     return (
-      <div className="fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-6 overflow-hidden">
-        <div className="bg-white rounded-3xl overflow-hidden max-w-4xl w-full relative">
+      <div className="fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
           <button
             onClick={onClose}
             className="absolute top-5 right-5 z-50 h-11 w-11 rounded-full bg-slate-100 hover:bg-slate-200 grid place-items-center"
