@@ -3,3 +3,10 @@ publish = "dist"
 
 [functions]
 directory = "netlify/functions"
+[[plugins]]
+package = "netlify-plugin-submit-sitemap"
+
+[plugins.inputs]
+baseUrl = "https://nesthomessa.com.au"
+sitemapUrl = "/sitemap.xml"  # Your manual sitemap location
+providers = ["google", "yandex"]
