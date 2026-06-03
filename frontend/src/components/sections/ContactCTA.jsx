@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Send, Phone, Mail, MapPin, X, FileBadge } from "lucide-react";
 import { toast } from "../../hooks/use-toast";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -11,9 +11,20 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
     message: "",
   });
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
   const [captchaValue, setCaptchaValue] = useState(null);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 425);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const validate = () => {
     let newErrors = {};
@@ -296,6 +307,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
           <div>
             <ReCAPTCHA
               sitekey="6LfTVQctAAAAAAXVF4sjU4Ko0uIrEwpJZMHHrv-8"
+              size={isMobile ? "compact" : "normal"}
               onChange={(value) => setCaptchaValue(value)}
             />
           </div>
