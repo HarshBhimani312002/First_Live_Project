@@ -176,12 +176,14 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
               <Mail className="h-5 w-5 text-[#0B1F3A]" />
             </div>
 
-            <div>
+            <div className="min-w-0">
               <div className="text-xs tracking-widest uppercase text-white/60">
                 Email
               </div>
 
-              <div className="font-medium">info@nesthomessa.com.au</div>
+              <div className="font-medium break-all">
+                info@nesthomessa.com.au
+              </div>
             </div>
           </li>
           <li className="flex items-start gap-4">
