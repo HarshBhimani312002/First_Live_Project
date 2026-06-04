@@ -36,12 +36,14 @@ We take the time to hear you, understand your lifestyle, and shape your vision i
             proudly.
           </h2>
           {/* NEW CONTENT ADDED */}
-          Our mission at NEST is to create homes that go beyond structures,
-          becoming meaningful spaces tailored to each client’s lifestyle and
-          aspirations. We are committed to delivering exceptional quality,
-          luxury craftsmanship, and personalised service in every project. From
-          concept to completion, we aim to bring each client’s vision to life
-          with precision and care.
+          <p className="mt-6 text-slate-600 text-lg leading-relaxed">
+            Our mission at NEST is to create homes that go beyond structures,
+            becoming meaningful spaces tailored to each client’s lifestyle and
+            aspirations. We are committed to delivering exceptional quality,
+            luxury craftsmanship, and personalised service in every project
+            across Adelaide, South Australia. From concept to completion, we aim
+            to bring each client’s vision to life with precision and care.
+          </p>
         </div>
       </section>
 
