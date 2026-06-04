@@ -26,7 +26,7 @@ function TitleManager() {
     switch (location.pathname) {
       case "/":
         document.title =
-          "Nest Homes SA | Home Renovation & Maintenance Adelaide";
+          "Nest Homes SA | A Place to call Home";
         break;
 
       case "/about":
