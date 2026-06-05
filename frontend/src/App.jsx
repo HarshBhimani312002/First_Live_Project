@@ -30,7 +30,7 @@ function TitleManager() {
         break;
 
       case "/about":
-        document.title = "About Nest Homes SA";
+        document.title = "About | Nest Homes SA";
         break;
 
       case "/services":
