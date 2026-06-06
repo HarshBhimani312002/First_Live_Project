@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: HarshBhimani312002/First_Live_Project
-  branch: master
+  name: git-gateway
 
 media_folder: "frontend/public/uploads"
 public_folder: "/uploads"
