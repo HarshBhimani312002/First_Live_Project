@@ -1,16 +1,17 @@
-local_backend: true
-
 backend:
-  name: test-repo
+  name: github
+  repo: HarshBhimani312002/First_Live_Project
+  branch: master
 
-media_folder: "public/uploads"
+media_folder: "frontend/public/uploads"
 public_folder: "/uploads"
 
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "src/content/projects"
+    folder: "frontend/src/content/projects"
     create: true
+    slug: "{{slug}}"
 
     fields:
       - { label: "Project Name", name: "title", widget: "string" }
