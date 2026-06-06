@@ -306,13 +306,13 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
               <p className="text-red-500 text-xs mt-1">{errors.message}</p>
             )}
           </div>
-          <div>
+          {/* <div>
             <ReCAPTCHA
               sitekey="6LfTVQctAAAAAAXVF4sjU4Ko0uIrEwpJZMHHrv-8"
               size={isMobile ? "compact" : "normal"}
               onChange={(value) => setCaptchaValue(value)}
             />
-          </div>
+          </div> */}
           <button
             type="submit"
             disabled={submitting}
