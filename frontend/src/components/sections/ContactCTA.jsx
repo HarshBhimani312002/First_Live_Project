@@ -212,7 +212,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
           Fill in the form — a real human will reply.
         </p>
 
-        <form onSubmit={onSubmit} className="space-y-4">
+        <form onSubmit={onSubmit} className="space-y-1">
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="text-xs font-semibold tracking-widest uppercase text-slate-500">
