@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Hugh",
+    "coverImage": "/upload/Hugh/hero.webp",
+    "gallery": [
+      "/upload/Hugh/hero_img1.webp",
+      "/upload/Hugh/hero_img2.webp",
+      "/upload/Hugh/hero_img3.webp",
+      "/upload/Hugh/hero_img4.webp",
+      "/upload/Hugh/hero_img5.webp",
+      "/upload/Hugh/hero_img6.webp",
+      "/upload/Hugh/hero_img7.webp",
+      "/upload/Hugh/hero_img8.webp",
+      "/upload/Hugh/hero_img9.webp",
+      "/upload/Hugh/hero_img10.webp",
+      "/upload/Hugh/hero_img11.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Loral",
+    "coverImage": "/upload/Loral/Project2_Image.webp",
+    "gallery": [
+      "/upload/Loral/Project2_Image1.webp",
+      "/upload/Loral/Project2_Image2.webp",
+      "/upload/Loral/Project2_Image3.webp",
+      "/upload/Loral/Project2_Image4.webp",
+      "/upload/Loral/Project2_Image5.webp",
+      "/upload/Loral/Project2_Image6.webp",
+      "/upload/Loral/Project2_Image7.webp",
+      "/upload/Loral/Project2_Image8.webp",
+      "/upload/Loral/Project2_Image9.webp",
+      "/upload/Loral/Project2_Image10.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Wendy",
+    "coverImage": "/upload/Wendy/project3_image.webp",
+    "gallery": [
+      "/upload/Wendy/project3_image1.webp",
+      "/upload/Wendy/project3_image2.webp",
+      "/upload/Wendy/project3_image3.webp",
+      "/upload/Wendy/project3_image4.webp",
+      "/upload/Wendy/project3_image5.webp",
+      "/upload/Wendy/project3_image6.webp",
+      "/upload/Wendy/project3_image7.webp",
+      "/upload/Wendy/project3_image8.webp",
+      "/upload/Wendy/project3_image9.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Coondoo",
+    "coverImage": "/upload/Coondoo/project4_image.webp",
+    "gallery": [
+      "/upload/Coondoo/project4_image1.webp",
+      "/upload/Coondoo/project4_image2.webp",
+      "/upload/Coondoo/project4_image3.webp",
+      "/upload/Coondoo/project4_image4.webp",
+      "/upload/Coondoo/project4_image5.webp",
+      "/upload/Coondoo/project4_image6.webp",
+      "/upload/Coondoo/project4_image7.webp",
+      "/upload/Coondoo/project4_image8.webp",
+      "/upload/Coondoo/project4_image9.webp",
+      "/upload/Coondoo/project4_image10.webp",
+      "/upload/Coondoo/project4_image11.webp"
+    ]
+  },
+   {
+    "id": 5,
+    "name": "Macdonnell",
+    "coverImage": "/upload/Macdonnell/project5_image.webp",
+    "gallery": [
+      "/upload/Macdonnell/project5_image1.webp",
+      "/upload/Macdonnell/project5_image2.webp",
+      "/upload/Macdonnell/project5_image3.webp",
+      "/upload/Macdonnell/project5_image4.webp",
+      "/upload/Macdonnell/project5_image5.webp",
+      "/upload/Macdonnell/project5_image6.webp",
+      "/upload/Macdonnell/project5_image7.webp",
+      "/upload/Macdonnell/project5_image8.webp",
+      "/upload/Macdonnell/project5_image9.webp",
+      "/upload/Macdonnell/project5_image10.webp",
+      "/upload/Macdonnell/project5_image11.webp",
+      "/upload/Macdonnell/project5_image12.webp"
+    ]
+  },
+   {
+    "id": 6,
+    "name": "Bond",
+    "coverImage": "/upload/Bond/project6_image.webp",
+    "gallery": [
+      "/upload/Bond/project6_image1.webp",
+      "/upload/Bond/project6_image2.webp",
+      "/upload/Bond/project6_image3.webp",
+      "/upload/Bond/project6_image4.webp",
+      "/upload/Bond/project6_image5.webp",
+      "/upload/Bond/project6_image6.webp",
+      "/upload/Bond/project6_image7.webp",
+      "/upload/Bond/project6_image8.webp",
+      "/upload/Bond/project6_image9.webp"
+    ]
+  }
+]

@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import { ArrowUpRight, X } from "lucide-react";
-import { PROJECTS } from "../../mock";
+// import { PROJECTS } from "../../mock";
 
 const TAGS = ["All", "Custom Home", "House & Land", "Luxury", "New Build"];
 
 export default function Projects({ preview = false, hideHeader = false }) {
   const [filter, setFilter] = useState("All");
   const [openImage, setOpenImage] = useState(null);
-
+const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
@@ -16,128 +16,22 @@ export default function Projects({ preview = false, hideHeader = false }) {
   const galleryRef = useRef(null);
   const projectsRef = useRef(null);
 
+  useEffect(() => {
+  fetch("/projects.json")
+    .then((res) => res.json())
+    .then((data) => setProjects(data));
+}, []);
+
   // only clickable on /projects page
   const isProjectsPage =
     location.pathname === "/Gallery" || location.pathname.includes("/Gallery/");
 
-  const all =
-    filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
-
-  // 5 project groups
-  const groupedProjects = [
-    {
-      id: 1,
-      name: "Hugh",
-      image: all[0]?.image,
-      photos: [
-        all[1],
-        all[2],
-        all[3],
-        all[4],
-        all[5],
-        all[6],
-        all[7],
-        all[8],
-        all[9],
-        all[10],
-        all[11],
-      ].filter(Boolean),
-    },
-    {
-      id: 2,
-      name: "Loral",
-      image: all[12]?.image,
-      photos: [
-        all[13],
-        all[14],
-        all[15],
-        all[16],
-        all[17],
-        all[18],
-        all[19],
-        all[20],
-        all[21],
-        all[22],
-      ].filter(Boolean),
-    },
-    {
-      id: 3,
-      name: "Wendy",
-      image: all[23]?.image,
-      photos: [
-        all[24],
-        all[25],
-        all[26],
-        all[27],
-        all[28],
-        all[29],
-        all[30],
-        all[31],
-        all[32],
-      ].filter(Boolean),
-    },
-    {
-      id: 4,
-      name: "Coondoo",
-      image: all[33]?.image,
-      photos: [
-        all[34],
-        all[35],
-        all[36],
-        all[37],
-        all[38],
-        all[39],
-        all[40],
-        all[41],
-        all[42],
-        all[43],
-        all[44],
-      ].filter(Boolean),
-    },
-    {
-      id: 5,
-      name: "Macdonnell",
-      image: all[45]?.image,
-      photos: [
-        all[46],
-        all[47],
-        all[48],
-        all[49],
-        all[50],
-        all[51],
-        all[52],
-        all[53],
-        all[54],
-        all[55],
-        all[56],
-        all[57],
-      ].filter(Boolean),
-    },
-    {
-      id: 6,
-      name: "Bond",
-      image: all[58]?.image,
-      photos: [
-        all[59],
-        all[60],
-        all[61],
-        all[62],
-        all[63],
-        all[64],
-        all[65],
-        all[66],
-        all[67],
-      ].filter(Boolean),
-    },
-  ];
-
-  // const list = preview ? groupedProjects.slice(0, 3) : groupedProjects;
-  const list = groupedProjects;
+    const list = projects;
 
   // selected project from URL
-  const selectedProject = id
-    ? groupedProjects.find((p) => p.id === Number(id))
-    : null;
+ const selectedProject = id
+  ? projects.find((p) => p.id === Number(id))
+  : null;
 
   // scroll to gallery ONLY on card click
   useEffect(() => {
@@ -280,7 +174,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src={p.image}
+                    src={p.coverImage}
                     alt={p.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     loading="eager"
@@ -349,7 +243,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-              {selectedProject.photos.map((img, index) => (
+              {selectedProject.gallery.map((img, index) => (
                 <div
                   key={index}
                   onClick={() => setOpenImage(img.image)}
@@ -357,7 +251,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
                 >
                   <div className="overflow-hidden">
                     <img
-                      src={img.image}
+                      src={img}
                       alt=""
                       className="w-full h-80 object-cover group-hover:scale-105 transition duration-500"
                       loading="eager"
