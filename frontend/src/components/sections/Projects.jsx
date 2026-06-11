@@ -8,7 +8,7 @@ const TAGS = ["All", "Custom Home", "House & Land", "Luxury", "New Build"];
 export default function Projects({ preview = false, hideHeader = false }) {
   const [filter, setFilter] = useState("All");
   const [openImage, setOpenImage] = useState(null);
-const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
@@ -17,21 +17,19 @@ const [projects, setProjects] = useState([]);
   const projectsRef = useRef(null);
 
   useEffect(() => {
-  fetch("/projects.json")
-    .then((res) => res.json())
-    .then((data) => setProjects(data));
-}, []);
+    fetch("/projects.json")
+      .then((res) => res.json())
+      .then((data) => setProjects(data));
+  }, []);
 
   // only clickable on /projects page
   const isProjectsPage =
     location.pathname === "/Gallery" || location.pathname.includes("/Gallery/");
 
-    const list = projects;
+  const list = projects;
 
   // selected project from URL
- const selectedProject = id
-  ? projects.find((p) => p.id === Number(id))
-  : null;
+  const selectedProject = id ? projects.find((p) => p.id === Number(id)) : null;
 
   // scroll to gallery ONLY on card click
   useEffect(() => {
@@ -246,7 +244,7 @@ const [projects, setProjects] = useState([]);
               {selectedProject.gallery.map((img, index) => (
                 <div
                   key={index}
-                  onClick={() => setOpenImage(img.image)}
+                  onClick={() => setOpenImage(img)}
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
                 >
                   <div className="overflow-hidden">
@@ -266,10 +264,10 @@ const [projects, setProjects] = useState([]);
 
         {/* Full Screen Image Modal */}
         {openImage && (
-          <div className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center p-6 overflow-hidden">
+          <div className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center p-6">
             <button
               onClick={() => setOpenImage(null)}
-              className="absolute top-6 right-6 text-white hover:text-[#F39019] transition-colors z-10"
+              className="absolute top-6 right-6 text-white"
             >
               <X className="h-10 w-10" />
             </button>
@@ -278,8 +276,6 @@ const [projects, setProjects] = useState([]);
               src={openImage}
               alt=""
               className="max-w-full max-h-full object-contain rounded-xl"
-              loading="eager"
-              fetchpriority="high"
             />
           </div>
         )}
