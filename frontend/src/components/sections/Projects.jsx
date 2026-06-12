@@ -11,7 +11,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
   // const [groupedProjects, setGroupedProjects] = useState([]);
 
   const [openImage, setOpenImage] = useState(null);
-
+  const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
@@ -19,6 +19,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
   const galleryRef = useRef(null);
   const projectsRef = useRef(null);
 
+<<<<<<< HEAD
   const markdownFiles = import.meta.glob("../../content/projects/*.md", {
     query: "?raw",
     import: "default",
@@ -65,11 +66,19 @@ export default function Projects({ preview = false, hideHeader = false }) {
   setGroupedProjects(PROJECTS);
 }, []);
     // const [groupedProjects] = useState(PROJECTS);
+=======
+  useEffect(() => {
+    fetch("/projects.json")
+      .then((res) => res.json())
+      .then((data) => setProjects(data));
+  }, []);
+>>>>>>> cb347e949aaaa8b671ddec1ed082e118302128d9
 
   // only clickable on /projects page
   const isProjectsPage =
     location.pathname === "/Gallery" || location.pathname.includes("/Gallery/");
 
+<<<<<<< HEAD
   // const all =
   //   filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
 
@@ -77,11 +86,12 @@ export default function Projects({ preview = false, hideHeader = false }) {
 
   // const list = preview ? groupedProjects.slice(0, 3) : groupedProjects;
   const list = groupedProjects;
+=======
+  const list = projects;
+>>>>>>> cb347e949aaaa8b671ddec1ed082e118302128d9
 
   // selected project from URL
-  const selectedProject = id
-    ? groupedProjects.find((p) => p.id === Number(id))
-    : null;
+  const selectedProject = id ? projects.find((p) => p.id === Number(id)) : null;
 
   // scroll to gallery ONLY on card click
   useEffect(() => {
@@ -316,10 +326,10 @@ export default function Projects({ preview = false, hideHeader = false }) {
 
         {/* Full Screen Image Modal */}
         {openImage && (
-          <div className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center p-6 overflow-hidden">
+          <div className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center p-6">
             <button
               onClick={() => setOpenImage(null)}
-              className="absolute top-6 right-6 text-white hover:text-[#F39019] transition-colors z-10"
+              className="absolute top-6 right-6 text-white"
             >
               <X className="h-10 w-10" />
             </button>
@@ -328,8 +338,6 @@ export default function Projects({ preview = false, hideHeader = false }) {
               src={openImage}
               alt=""
               className="max-w-full max-h-full object-contain rounded-xl"
-              loading="eager"
-              fetchpriority="high"
             />
           </div>
         )}
