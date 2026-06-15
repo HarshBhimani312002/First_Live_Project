@@ -17,7 +17,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
   const projectsRef = useRef(null);
 
   useEffect(() => {
-    fetch("/projects.json")
+    fetch("/.netlify/functions/getProjects")
       .then((res) => res.json())
       .then((data) => setProjects(data));
   }, []);

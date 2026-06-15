@@ -8,6 +8,8 @@ import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import Packages from "./pages/Packages";
 import ContactPage from "./pages/ContactPage";
+import Admin from "./pages/Admin"; // NEW
+import Login from "./pages/Login";
 
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
@@ -17,7 +19,6 @@ function TitleManager() {
   const location = useLocation();
 
   useEffect(() => {
-    // Gallery details page fix
     if (location.pathname.startsWith("/Gallery/")) {
       document.title = "Gallery | Nest Homes";
       return;
@@ -25,8 +26,7 @@ function TitleManager() {
 
     switch (location.pathname) {
       case "/":
-        document.title =
-          "Nest Homes SA | A Place to call Home";
+        document.title = "Nest Homes SA | A Place to call Home";
         break;
 
       case "/about":
@@ -49,6 +49,14 @@ function TitleManager() {
         document.title = "Contact | Nest Homes SA";
         break;
 
+      case "/admin":
+        document.title = "Admin | Nest Homes SA";
+        break;
+
+      case "/login ":
+        document.title = "login | Nest Homes SA";
+        break;
+
       default:
         document.title = "Nest Homes";
     }
@@ -63,7 +71,6 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
 
-        {/* Title Manager */}
         <TitleManager />
 
         <Routes>
@@ -74,14 +81,17 @@ function App() {
 
             <Route path="/services" element={<ServicesPage />} />
 
-            {/* Gallery Routes */}
             <Route path="/Gallery" element={<ProjectsPage />} />
             <Route path="/Gallery/:id" element={<ProjectsPage />} />
 
             <Route path="/Packages" element={<Packages />} />
 
             <Route path="/contact" element={<ContactPage />} />
+
+            {/* NEW ADMIN ROUTE */}
           </Route>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
 
