@@ -7,9 +7,6 @@ const TAGS = ["All", "Custom Home", "House & Land", "Luxury", "New Build"];
 
 export default function Projects({ preview = false, hideHeader = false }) {
   const [filter, setFilter] = useState("All");
-  // const [groupedProjects] = useState(projectsData);
-  // const [groupedProjects, setGroupedProjects] = useState([]);
-
   const [openImage, setOpenImage] = useState(null);
   const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
@@ -19,76 +16,17 @@ export default function Projects({ preview = false, hideHeader = false }) {
   const galleryRef = useRef(null);
   const projectsRef = useRef(null);
 
-<<<<<<< HEAD
-  const markdownFiles = import.meta.glob("../../content/projects/*.md", {
-    query: "?raw",
-    import: "default",
-    eager: true,
-  });
-
-  const PROJECTS = Object.entries(markdownFiles).map(
-    ([path, content], index) => {
-      const lines = content.split("\n");
-
-      const title =
-        lines
-          .find((l) => l.startsWith("title:"))
-          ?.replace("title:", "")
-          .trim() || "";
-
-      const description =
-        lines
-          .find((l) => l.startsWith("description:"))
-          ?.replace("description:", "")
-          .trim() || "";
-
-      const coverImage =
-        lines
-          .find((l) => l.startsWith("coverImage:"))
-          ?.replace("coverImage:", "")
-          .trim() || "";
-
-      const gallery = lines
-        .filter((l) => l.trim().startsWith("- "))
-        .map((l) => l.replace("-", "").trim());
-
-      return {
-        id: index + 1,
-        name: title,
-        description,
-        coverImage,
-        gallery,
-      };
-    },
-  );
-  const [groupedProjects, setGroupedProjects] = useState([]);
-  useEffect(() => {
-  setGroupedProjects(PROJECTS);
-}, []);
-    // const [groupedProjects] = useState(PROJECTS);
-=======
   useEffect(() => {
     fetch("/projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data));
   }, []);
->>>>>>> cb347e949aaaa8b671ddec1ed082e118302128d9
 
   // only clickable on /projects page
   const isProjectsPage =
     location.pathname === "/Gallery" || location.pathname.includes("/Gallery/");
 
-<<<<<<< HEAD
-  // const all =
-  //   filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
-
-  // 5 project groups
-
-  // const list = preview ? groupedProjects.slice(0, 3) : groupedProjects;
-  const list = groupedProjects;
-=======
   const list = projects;
->>>>>>> cb347e949aaaa8b671ddec1ed082e118302128d9
 
   // selected project from URL
   const selectedProject = id ? projects.find((p) => p.id === Number(id)) : null;
