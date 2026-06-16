@@ -64,11 +64,6 @@ export default function Hero() {
             the small moments that make a house feel like home.
           </p>
 
-          {/* <p className="mt-6 text-lg md:text-xl text-white/85 max-w-xl leading-relaxed">
-            Boutique, custom-built homes crafted with honest pricing, timeless
-            design, and genuine craftsmanship — right here in South Australia.
-          </p> */}
-
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               to="/Gallery"
