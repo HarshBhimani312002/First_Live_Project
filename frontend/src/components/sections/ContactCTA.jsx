@@ -120,9 +120,9 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   };
 
   const content = (
-    <div className="grid lg:grid-cols-2">
+    <div className="grid lg:grid-cols-2 items-stretch">
       {/* Left Side */}
-      <div className="bg-[#0B1F3A] text-white p-8 md:p-9 relative overflow-hidden">
+      <div className="h-full bg-[#0B1F3A] text-white p-8 md:p-9 relative overflow-hidden">
         <div className="absolute -bottom-10 -right-10 w-52 h-52 rounded-full bg-[#F39019]/15 blur-2xl" />
 
         <div className="title-accent mb-4" />
@@ -203,7 +203,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
       </div>
 
       {/* Right Side */}
-      <div className="bg-white p-8 md:p-7">
+      <div className="h-full bg-white p-8 md:p-7">
         <h3 className="font-[Poppins] text-2xl font-semibold text-[#0B1F3A] mb-2">
           Request a consultation
         </h3>
@@ -336,7 +336,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
   if (isModal) {
     return (
       <div className="fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+        <div className="bg-white rounded-3xl max-w-4xl w-full overflow-y-auto relative">
           <button
             onClick={onClose}
             className="absolute top-5 right-5 z-50 h-11 w-11 rounded-full bg-slate-100 hover:bg-slate-200 grid place-items-center"
@@ -352,7 +352,7 @@ export default function ContactCTA({ isModal = false, onClose = () => {} }) {
 
   // Normal Contact Page View
   return (
-    <section className="py-24 bg-[#FAFAF7]">
+    <section className="py-24 bg-[#F7F6F2]">
       <div className="max-w-6xl mx-auto px-6 rounded-3xl overflow-hidden shadow-sm">
         {content}
       </div>
