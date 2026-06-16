@@ -150,7 +150,7 @@ export default function Projects({ preview = false, hideHeader = false }) {
           {/* Cards Container */}
           <div
             ref={projectsRef}
-            className="flex gap-7 overflow-x-auto scroll-smooth snap-x snap-mandatory"
+            className="flex gap-7 overflow-x-auto scroll-smooth snap-x snap-mandatory select-none"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
