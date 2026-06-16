@@ -5,7 +5,7 @@ exports.handler = async () => {
     const store = getStore({
       name: "projects",
       siteID: process.env.NETLIFY_SITE_ID,
-      token: "process.env.NETLIFY_TOKEN"
+      token: process.env.NETLIFY_TOKEN
     });
 
     const projects = await store.get("projects", {

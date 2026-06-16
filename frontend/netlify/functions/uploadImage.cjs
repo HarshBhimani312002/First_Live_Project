@@ -7,7 +7,7 @@ exports.handler = async (event) => {
     const store = getStore({
       name: "images",
       siteID: process.env.NETLIFY_SITE_ID,
-      token: "process.env.NETLIFY_TOKEN"
+      token: process.env.NETLIFY_TOKEN
     });
 
     await store.set(

@@ -7,13 +7,13 @@ exports.handler = async (event) => {
     const projectStore = getStore({
       name: "projects",
       siteID: process.env.NETLIFY_SITE_ID,
-      token: "process.env.NETLIFY_TOKEN",
+      token: process.env.NETLIFY_TOKEN,
     });
 
     const imageStore = getStore({
       name: "images",
       siteID: process.env.NETLIFY_SITE_ID,
-      token: "process.env.NETLIFY_TOKEN",
+      token: process.env.NETLIFY_TOKEN,
     });
 
     const projects =
