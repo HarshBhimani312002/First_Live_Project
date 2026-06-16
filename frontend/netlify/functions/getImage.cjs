@@ -7,8 +7,8 @@ exports.handler = async (event) => {
 
     const store = getStore({
       name: "images",
-      siteID: "f2a7c388-5eb9-412b-a88a-080e9f2824ae",
-      token: "nfp_mz4HHLhwRy68YXZWAVAemj2mpPob7cgfbd3c"
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: "process.env.NETLIFY_TOKEN"
     });
 
     const image = await store.get(fileName, {
