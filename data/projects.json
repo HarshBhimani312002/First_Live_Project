@@ -6,13 +6,5 @@
     "gallery": [
       "/.netlify/functions/getImage?file=harsh/1781705942046-Screenshot (1231).webp"
     ]
-  },
-  {
-    "id": 1781705969376,
-    "name": "hugh",
-    "coverImage": "/.netlify/functions/getImage?file=hugh/cover-1781705969835-Screenshot (1244).webp",
-    "gallery": [
-      "/.netlify/functions/getImage?file=hugh/1781705972553-Screenshot (1235).webp"
-    ]
   }
 ]
