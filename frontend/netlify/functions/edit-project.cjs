@@ -1,36 +1,29 @@
-const { getStore } = require("@netlify/blobs");
+const {
+  getProjects,
+  saveProjects,
+  deleteGitHubFile,
+} = require("./githubHelper");
 
 exports.handler = async (event) => {
   try {
     const updatedProject = JSON.parse(event.body);
 
-    const projectStore = getStore({
-      name: "projects",
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_TOKEN,
-    });
+    console.log("removedImages:", updatedProject.removedImages);
 
-    const imageStore = getStore({
-      name: "images",
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_TOKEN,
-    });
-
-    const projects =
-      (await projectStore.get("projects", {
-        type: "json",
-      })) || [];
+    const { projects, sha } = await getProjects();
 
     const oldProject = projects.find(
       (project) => project.id === updatedProject.id,
     );
 
-    // Removed gallery images delete
+    // Delete removed gallery images
     for (const imageUrl of updatedProject.removedImages || []) {
-      const fileName = imageUrl.split("file=")[1];
+      const imagePath = imageUrl.split("file=")[1];
 
-      if (fileName) {
-        await imageStore.delete(fileName);
+      if (imagePath) {
+        console.log("Deleting gallery image:", imagePath);
+
+        await deleteGitHubFile(`images/${imagePath}`);
       }
     }
 
@@ -45,17 +38,19 @@ exports.handler = async (event) => {
         : project,
     );
 
-    await projectStore.setJSON("projects", newProjects);
+    await saveProjects(newProjects, sha);
 
-    // Cover image change થઈ હોય તો જૂની image delete
+    // Delete old cover image if changed
     if (
       oldProject?.coverImage &&
       oldProject.coverImage !== updatedProject.coverImage
     ) {
-      const oldFileName = oldProject.coverImage.split("file=")[1];
+      const oldImagePath = oldProject.coverImage.split("file=")[1];
 
-      if (oldFileName) {
-        await imageStore.delete(oldFileName);
+      if (oldImagePath) {
+        console.log("Deleting old cover:", oldImagePath);
+
+        await deleteGitHubFile(`images/${oldImagePath}`);
       }
     }
 
@@ -66,6 +61,8 @@ exports.handler = async (event) => {
       }),
     };
   } catch (err) {
+    console.error(err);
+
     return {
       statusCode: 500,
       body: JSON.stringify({

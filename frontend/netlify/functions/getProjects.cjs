@@ -2,11 +2,11 @@ const { getProjects } = require("./githubHelper");
 
 exports.handler = async () => {
   try {
-    const data = await getProjects();
+    const { projects } = await getProjects();
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data, null, 2),
+      body: JSON.stringify(projects),
     };
   } catch (err) {
     return {

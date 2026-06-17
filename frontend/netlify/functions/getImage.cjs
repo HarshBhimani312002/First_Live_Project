@@ -1,26 +1,31 @@
-const { getStore } = require("@netlify/blobs");
+const owner = process.env.GITHUB_OWNER;
+const repo = process.env.GITHUB_REPO;
+const token = process.env.GITHUB_TOKEN;
 
 exports.handler = async (event) => {
   try {
-    const fileName =
-      event.queryStringParameters.file;
+    const fileName = event.queryStringParameters.file;
 
-    const store = getStore({
-      name: "images",
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_TOKEN
-    });
+    const response = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/contents/images/${fileName}?ref=experiment`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/vnd.github+json",
+        },
+      },
+    );
 
-    const image = await store.get(fileName, {
-      type: "arrayBuffer",
-    });
-
-    if (!image) {
+    if (!response.ok) {
       return {
         statusCode: 404,
         body: "Image not found",
       };
     }
+
+    const file = await response.json();
+
+    const imageBuffer = Buffer.from(file.content.replace(/\n/g, ""), "base64");
 
     let contentType = "image/jpeg";
 
@@ -28,10 +33,7 @@ exports.handler = async (event) => {
       contentType = "image/png";
     } else if (fileName.endsWith(".webp")) {
       contentType = "image/webp";
-    } else if (
-      fileName.endsWith(".jpg") ||
-      fileName.endsWith(".jpeg")
-    ) {
+    } else if (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg")) {
       contentType = "image/jpeg";
     }
 
@@ -41,7 +43,7 @@ exports.handler = async (event) => {
         "Content-Type": contentType,
         "Cache-Control": "public, max-age=31536000",
       },
-      body: Buffer.from(image).toString("base64"),
+      body: imageBuffer.toString("base64"),
       isBase64Encoded: true,
     };
   } catch (err) {
