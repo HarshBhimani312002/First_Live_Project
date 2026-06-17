@@ -1,27 +1,19 @@
-const { getStore } = require("@netlify/blobs");
+const { getProjects } = require("./githubHelper");
 
 exports.handler = async () => {
   try {
-    const store = getStore({
-      name: "projects",
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_TOKEN
-    });
-
-    const projects = await store.get("projects", {
-      type: "json"
-    });
+    const data = await getProjects();
 
     return {
       statusCode: 200,
-      body: JSON.stringify(projects || [])
+      body: JSON.stringify(data, null, 2),
     };
   } catch (err) {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        error: err.message
-      })
+        error: err.message,
+      }),
     };
   }
 };
