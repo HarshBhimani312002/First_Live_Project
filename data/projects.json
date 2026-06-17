@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": 1781702459987,
+    "name": "harsh",
+    "coverImage": "/.netlify/functions/getImage?file=harsh/cover-1781702460849-Screenshot (1227).webp",
+    "gallery": [
+      "/.netlify/functions/getImage?file=harsh/1781702463559-Screenshot (1232).webp"
+    ]
+  }
+]
