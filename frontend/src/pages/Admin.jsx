@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import imageCompression from "browser-image-compression";
 
 export default function Admin() {
   const [name, setName] = useState("");
@@ -31,6 +32,15 @@ export default function Admin() {
       };
     });
   };
+  const compressImage = async (file) => {
+    const options = {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 1920,
+      useWebWorker: true,
+    };
+
+    return await imageCompression(file, options);
+  };
   const loadProjects = async () => {
     try {
       const res = await fetch("/.netlify/functions/getProjects");
@@ -61,7 +71,8 @@ export default function Admin() {
             continue;
           }
 
-          const imageBase64 = await fileToBase64(image);
+          const compressedImage = await compressImage(image);
+          const imageBase64 = await fileToBase64(compressedImage);
 
           const upload = await fetch("/.netlify/functions/uploadImage", {
             method: "POST",
@@ -83,7 +94,8 @@ export default function Admin() {
 
         // નવી image પસંદ કરી હોય તો upload
         if (cover && typeof cover !== "string") {
-          const coverBase64 = await fileToBase64(cover);
+          const compressedCover = await compressImage(cover);
+          const coverBase64 = await fileToBase64(compressedCover);
 
           const coverUpload = await fetch("/.netlify/functions/uploadImage", {
             method: "POST",
@@ -163,7 +175,8 @@ export default function Admin() {
       // Upload Cover Image
 
       // Upload Cover Image
-      const coverBase64 = await fileToBase64(cover);
+      const compressedCover = await compressImage(cover);
+      const coverBase64 = await fileToBase64(compressedCover);
 
       const coverUpload = await fetch("/.netlify/functions/uploadImage", {
         method: "POST",
@@ -185,7 +198,8 @@ export default function Admin() {
 
       for (let i = 0; i < gallery.length; i++) {
         const image = gallery[i];
-        const imageBase64 = await fileToBase64(image);
+        const compressedImage = await compressImage(image);
+        const imageBase64 = await fileToBase64(compressedImage);
 
         const upload = await fetch("/.netlify/functions/uploadImage", {
           method: "POST",
