@@ -1,14 +1,5 @@
 [
   {
-    "id": 1781705939361,
-    "name": "harsh",
-    "coverImage": "/.netlify/functions/getImage?file=harsh/cover-1781705939826-Screenshot (1226).webp",
-    "gallery": [
-      "/.netlify/functions/getImage?file=harsh/1781705942046-Screenshot (1231).webp",
-      "/.netlify/functions/getImage?file=harsh/1781706027564-Screenshot (1255).webp"
-    ]
-  },
-  {
     "id": 1781706145145,
     "name": "loral",
     "coverImage": "/.netlify/functions/getImage?file=loral/cover-1781706145671-Screenshot (1225).webp",
